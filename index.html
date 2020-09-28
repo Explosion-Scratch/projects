@@ -1,8 +1,17 @@
-<head>
-	<link rel='stylesheet' href='main.css'>
-	<script src='main.js'></script>
-</head>
+<!DOCTYPE html>
 <html>
-	<div id='date'>
-	</div>
-</html>
+<body>
+
+<h2>My First JavaScript</h2>
+
+<button type="button"
+onclick="document.getElementById('demo').innerHTML = Date()">
+Click me to display Date and Time.</button>
+
+<p id="demo"></p>
+
+</body>
+</html> 
+<script>
+	document.getElementById('demo').innerHTML = Date()
+</script>
