@@ -39,7 +39,10 @@ function updateTimeMilliseconds(k) {
 
   if (k < 100) {
     return "00" + k;
-  }
+	}
+  else {
+		return k;
+	}
 }
 function updateTime(k) {
   if (k < 10) {
