@@ -36,17 +36,42 @@ a:hover  {
 	color: black;
 	background-position: -100% 0;
 }
-button {
-	transition: all 0.5s;
-	padding: 10px;
-	border-radius: 5px;
-	background-color: transparent;
-	border: 1px dashed var(--color);
+.button,
+  [class*="button-"] {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    float: left;
+    margin: 0 1em 1em 0;
+    padding: 0 4em;
+    height: 3.5em;
+    font: 300 1em/3.5em 'Open Sans', sans-serif;
+    text-decoration: none;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+    letter-spacing: .08em;
+    color: #fff;
+    background: #0090C0;
+    border: solid 1px #fff;
+    border-radius: 2px;
+    -moz-transition: ease 0.35s all;
+    -o-transition: ease 0.35s all;
+    -webkit-transition: ease 0.35s all;
+    transition: ease 0.35s all;
+  }
+.button:hover,
+[class*="button-"]:hover {
+	background: #007DA7;
+	box-shadow: 0 0 3px rgba(0, 0, 0, 0.5) inset;
 }
-button:hover {
-	border: 1px solid var(--color);
+.button-hover:hover {
+	line-height: 9em;
 }
-
+.button-hover:before {
+	content: attr(data-text);
+	color: #DEEFF5;
+	position: absolute;
+	top: -2.75em;
+}
 h1 {
 	font-family: 'Quicksand';
 	font-weight: 200;
