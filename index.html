@@ -5,12 +5,12 @@ function currentTime() {
   var hour = date.getHours();
   var min = date.getMinutes();
   var sec = date.getSeconds();
-	var milisec = date.getMiliseconds();
+	var milisec = date.getMilliseconds();
   hour = updateTime(hour);
   min = updateTime(min);
   sec = updateTime(sec);
 	milisec=updateTime(milisec);
-  document.getElementById("clock").innerText = hour + " : " + min + " : " + sec;
+  document.getElementById("clock").innerText = hour + " : " + min + " : " + sec + " : " + milisec;
     var t = setTimeout(function(){ currentTime() }, 1);
 }
 
