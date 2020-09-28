@@ -7,7 +7,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
 * {
 	--color: #66ff99;
-	--color-transparent: #66ff99;
+	--color-transparent: rgba(102, 255, 153, 0.74);
 }
 body {
   background-color: #121212;
@@ -23,9 +23,10 @@ button {
 	padding: 10px;
 	border-radius: 5px;
 	background-color: transparent;
+	border: none;
 }
 button:hover {
-	box-shadow: 0 2px 0 2px;
+	box-shadow: 0 2px 0 2px var(--color-transparent);
 }
 
 h1 {
