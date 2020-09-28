@@ -1,1 +1,2 @@
-run= 'google-chrome index.html'
+run = "google-chrome index.html"
+language = "html"
