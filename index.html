@@ -47,8 +47,8 @@ a:hover  {
     text-decoration: none;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
     letter-spacing: .08em;
-    color: #fff;
-    background: #0090C0;
+    color: var(--color);
+    background: black;
     border-radius: 5px;
     -moz-transition: ease 0.35s all;
     -o-transition: ease 0.35s all;
@@ -57,7 +57,7 @@ a:hover  {
   }
 .button:hover,
 [class*="button-"]:hover {
-	background: #007DA7;
+	background: black;
 	box-shadow: 0 0 3px rgba(0, 0, 0, 0.5) inset;
 }
 .button-hover:hover {
@@ -65,7 +65,7 @@ a:hover  {
 }
 .button-hover:before {
 	content: attr(data-text);
-	color: #DEEFF5;
+	color: var(--color);
 	position: absolute;
 	top: -2.75em;
 }
