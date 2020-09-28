@@ -7,7 +7,7 @@ body {
 }
 
 #clock {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Monospace';
   color: #66ff99;
   font-size: 56px;
   text-align: center;
@@ -28,7 +28,7 @@ function currentTime() {
   hour = updateTime(hour);
   min = updateTime(min);
   sec = updateTime(sec);
-	milisec=updateTimeMilliseconds(0);
+	milisec=updateTimeMilliseconds(milisec);
   document.getElementById("clock").innerText = hour + " : " + min + " : " + sec + " : " + milisec;
     var t = setTimeout(function(){ currentTime() }, 1);
 }
