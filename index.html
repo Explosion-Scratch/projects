@@ -28,7 +28,7 @@ function currentTime() {
   hour = updateTime(hour);
   min = updateTime(min);
   sec = updateTime(sec);
-	milisec=updateTime(milisec);
+	milisec=updateTimeMilliseconds(milisec);
   document.getElementById("clock").innerText = hour + " : " + min + " : " + sec + " : " + milisec;
     var t = setTimeout(function(){ currentTime() }, 1);
 }
