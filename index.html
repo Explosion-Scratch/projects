@@ -5,11 +5,13 @@ function currentTime() {
   var hour = date.getHours();
   var min = date.getMinutes();
   var sec = date.getSeconds();
+	var milisec = date.getMiliseconds();
   hour = updateTime(hour);
   min = updateTime(min);
   sec = updateTime(sec);
+	milisec=updateTime(milisec);
   document.getElementById("clock").innerText = hour + " : " + min + " : " + sec;
-    var t = setTimeout(function(){ currentTime() }, 1000);
+    var t = setTimeout(function(){ currentTime() }, 1);
 }
 
 function updateTime(k) {
