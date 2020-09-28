@@ -28,17 +28,17 @@ function currentTime() {
   hour = updateTime(hour);
   min = updateTime(min);
   sec = updateTime(sec);
-	milisec=updateTimeMilliseconds(milisec);
+	milisec=updateTimeMilliseconds(99);
   document.getElementById("clock").innerText = hour + " : " + min + " : " + sec + " : " + milisec;
     var t = setTimeout(function(){ currentTime() }, 1);
 }
 function updateTimeMilliseconds(k) {
 	if (k < 10) {
-		return "0" + k;
+		return "00" + k;
 	}
 
   if (k < 100) {
-    return "00" + k;
+    return "0" + k;
 	}
   else {
 		return k;
