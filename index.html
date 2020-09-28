@@ -19,16 +19,34 @@ body {
 	color: var(--color);
 	transition-duration: 0.5s;
 }
-a {
-	display: inline-block;
-	padding: 0px;
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+a { 
+	line-height: 1em;
+  text-decoration: none;
+  background-size: 200% auto;
+  background-position: -0% 0;
+  background-image: linear-gradient(to right, rgba(255,255,255,0) 50%, #f94 50%);
+  transition: background-position 0.5s ease-out;
 }
-a::after {
-	content: '';
-	width: 100%;
-	height: 2px;
+ 
+a:hover  {
+	background-position: -100% 0;
 }
-
 button {
 	padding: 10px;
 	border-radius: 5px;
