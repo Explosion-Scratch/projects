@@ -37,13 +37,14 @@ a:hover  {
 	background-position: -100% 0;
 }
 button {
+	transition: all 0.5s;
 	padding: 10px;
 	border-radius: 5px;
 	background-color: transparent;
-	border: none;
+	border: 1px dashed var(--color);
 }
 button:hover {
-	box-shadow: 0 0px 0 2.5px var(--color-transparent), 0 0px 0 5px var(--color-transparent);
+	border: 1px solid var(--color);
 }
 
 h1 {
