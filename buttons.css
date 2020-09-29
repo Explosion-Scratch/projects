@@ -64,7 +64,9 @@ body {
 	overflow: hidden;
 	box-shadow: 0 0px 15px var(--main-color);
 }
-
+.btns a:hover {
+	box-shadow: 0 0px 20px var(--main-color);
+}
 .btns a:first-child {
 	background: linear-gradient(90deg, var(--secondary-color), var(--main-color));
 }
