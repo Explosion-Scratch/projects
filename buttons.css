@@ -54,7 +54,7 @@ body {
 	line-height: 60px;
 	border-radius: 10px;
 	text-decoration: none;
-	color: var(--text);
+	color: var(--background);
 	font-size: 18px;
 	font-weight: 500;
 	letter-spacing: 1px;
@@ -65,12 +65,7 @@ body {
 .btns a:first-child {
 	background: linear-gradient(90deg, var(--secondary-color), var(--main-color));
 }
-.btns a:first-child:hover {
-	background: linear-gradient(-90deg, var(--secondary-color), var(--main-color));
-}
-.btns a:last-child:hover {
-	background: linear-gradient(-90deg, var(--main-color), var(--secondary-color));
-}
+
 .btns a:last-child {
 	background: linear-gradient(90deg, var(--main-color), var(--secondary-color));
 }
