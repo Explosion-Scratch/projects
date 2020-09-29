@@ -26,6 +26,7 @@ body {
 	background: var(--background);
 	padding: 20px 30px;
 	box-shadow: 0px 0px 10px var(--main-color);
+	border-radius: 10px;
 }
 
 .wrapper .text {
@@ -45,7 +46,6 @@ body {
 }
 
 .btns a {
-	transition-duration: 0.5s;
 	position: relative;
 	margin: 0 20px;
 	height: 60px;
@@ -63,10 +63,10 @@ body {
 }
 
 .btns a:first-child {
-	background: linear-gradient(90deg, var(--secondary-color), var(--secondary-color));
+	background: linear-gradient(90deg, var(--secondary-color), var(--main-color));
 }
 .btns a:first-child:hover {
-	background: linear-gradient(-90deg, var(--main-color), var(--secondary-color));
+	background: linear-gradient(-90deg, var(--secondary-color), var(--main-color));
 }
 .btns a:last-child:hover {
 	background: linear-gradient(-90deg, var(--main-color), var(--secondary-color));
