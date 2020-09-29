@@ -10,7 +10,7 @@
 	outline: none;
 	box-sizing: border-box;
 	font-family: 'Poppins', sans-serif;
-	transition-duration: 0.5s;
+	transition: color, background-color, box-shadow 0.5s;
 }
 
 html,
