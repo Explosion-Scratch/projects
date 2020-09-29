@@ -64,7 +64,12 @@ body {
 .btns a:first-child {
 	background: linear-gradient(-90deg, var(--main-color), var(--secondary-color));
 }
-
+.btns a:first-child:hover {
+	background: linear-gradient(90deg, var(--main-color), var(--secondary-color));
+}
+.btns a:last-child:hover {
+	background: linear-gradient(-90deg, var(--main-color), var(--secondary-color));
+}
 .btns a:last-child {
 	background: linear-gradient(90deg, var(--main-color), var(--secondary-color));
 }
