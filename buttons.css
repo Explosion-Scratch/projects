@@ -45,6 +45,7 @@ body {
 }
 
 .btns a {
+	transition-duration: 0.5s;
 	position: relative;
 	margin: 0 20px;
 	height: 60px;
@@ -62,10 +63,10 @@ body {
 }
 
 .btns a:first-child {
-	background: linear-gradient(-90deg, var(--main-color), var(--secondary-color));
+	background: linear-gradient(90deg, var(--secondary-color), var(--secondary-color));
 }
 .btns a:first-child:hover {
-	background: linear-gradient(90deg, var(--main-color), var(--secondary-color));
+	background: linear-gradient(-90deg, var(--main-color), var(--secondary-color));
 }
 .btns a:last-child:hover {
 	background: linear-gradient(-90deg, var(--main-color), var(--secondary-color));
