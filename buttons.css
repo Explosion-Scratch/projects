@@ -51,7 +51,7 @@ body {
 	line-height: 60px;
 	border-radius: 30px;
 	text-decoration: none;
-	color: var(--background);
+	color: var(--text);
 	font-size: 18px;
 	font-weight: 500;
 	text-transform: uppercase;
@@ -65,7 +65,7 @@ body {
 }
 
 .btns a:last-child {
-	background: linear-gradient(90deg, var(--secondary-color), var(--main-color));
+	background: linear-gradient(90deg, var(--main-color), var(--secondary-color));
 }
 
 .btns a>span {
