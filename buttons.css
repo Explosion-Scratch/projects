@@ -36,18 +36,18 @@ body {
 
 .wrapper .text {
 	font-size: 35px;
-	font-weight: 500;
+	font-weight: 600;
 }
 
 .wrapper p {
 	font-size: 20px;
-	font-weight: 500;
+	font-weight: 400;
 	line-height: 20px;
 }
 
 .wrapper .btns {
 	display: flex;
-	margin: 30px 0 20px 0;
+	margin: 30px auto 20px auto;
 }
 
 .btns a {
