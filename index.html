@@ -2,6 +2,7 @@
 	<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 	<link rel='stylesheet' href='main.css'>
 </head>
+<body>
 <div class='container'>
 	<h1>Welcome!</h1>
 	<p>Hi there! This is the part of my website with all of my JavaScript projects! Some of them are listed below:</p>
@@ -10,3 +11,11 @@
 		<li><a href='buttons.html'>Some super satisfying buttons that I'm working on</a></li>
 	</ul>
 </div>
+</div>
+</body>
+<script type="text/javascript">
+$('#container').css('opacity', 0);
+$(window).load(function() {
+  $('#container').css('opacity', 1);
+});
+</script>
