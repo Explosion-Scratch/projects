@@ -51,7 +51,7 @@ body {
 	width: 200px;
 	display: block;
 	line-height: 60px;
-	border-radius: 30px;
+	border-radius: 10px;
 	text-decoration: none;
 	color: var(--text);
 	font-size: 18px;
@@ -71,6 +71,7 @@ body {
 }
 
 .btns a>span {
+	/*Styling for the shadow */
 	position: absolute;
 	background: var(--background);
 	transform: translate(-50%, -50%);
