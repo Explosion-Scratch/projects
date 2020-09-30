@@ -117,7 +117,7 @@ input::-webkit-search-cancel-button {
 
 input[type=search] {
 	margin: 0 auto;
-	display:
+	display: block;
 	background: var(--background) url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
 	box-shadow: 0 0 0 2px var(--color-transparent);
 	border: none;
