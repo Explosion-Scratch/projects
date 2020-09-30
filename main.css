@@ -99,15 +99,19 @@
 		text-align: center;
 		margin: 0 auto;
 	}
+	* {
+		--input-height: 50px;
+	}
 	.inputs {
 		width: 200px;
-		height: 30px;
+		height: var(--input-height);
 		display: block;
-		padding: 2px;
+		padding: 0px;
 		border-radius: 10px;
 		box-shadow: 0 0 0 5px red;
 	}
 	.inputs input, .inputs button {
+		height: var(--input-height);
 		padding: 4px;
 	}
 	.inputs input {
