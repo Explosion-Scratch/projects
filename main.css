@@ -111,7 +111,10 @@ input[type=search] {
 }
 
 
-
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button {
+	display: none; 
+}
 input[type=search] {
 	margin: 0 auto;
 	display: block;
