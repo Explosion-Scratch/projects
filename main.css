@@ -108,8 +108,12 @@
 		padding: 4px;
 	}
 	.inputs input {
+		float: left; 
+		width: 90%;
 		border-radius: 10px 0 0 10px;
 	}
 	.inputs button {
+		float: right;
+		width: 10%;
 		border-radius: 0 10px 10px 0;
 	}
