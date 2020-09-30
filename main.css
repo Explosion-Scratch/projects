@@ -23,7 +23,6 @@
 		font-family: 'Quicksand';
 		font-weight: 200;
 		color: var(--color);
-		transition-duration: 0.5s;
 	}
 
 	a {
