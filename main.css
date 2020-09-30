@@ -127,12 +127,12 @@
 		border-radius: var(--input-border-radius);
 	}
 	.inputs button {
-		position: relative;
+		position: absolute;
 		background-color: var(--background);
 		color: var(--color);
 		border: 2px solid var(--color-transparent);
 		float: right;
-		width: 20%;
+		width: calc(var(--input-wi;
 		right: 20%;
 		z-index: 1;
 		border-radius: 0 var(--input-border-radius) var(--input-border-radius) 0;
