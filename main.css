@@ -99,7 +99,7 @@
 		text-align: center;
 		margin: 0 auto;
 	}
-	input[type='text'] {
+	.inputs {
 		display: block;
 		margin: 0 auto;
 		opacity: 0.8;
