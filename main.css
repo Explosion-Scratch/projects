@@ -132,7 +132,7 @@
 		color: var(--color);
 		border: 2px solid var(--color-transparent);
 		float: right;
-		width: calc(var(--input-wi;
+		width: calc(var(--input-width/20);
 		right: 20%;
 		z-index: 1;
 		border-radius: 0 var(--input-border-radius) var(--input-border-radius) 0;
