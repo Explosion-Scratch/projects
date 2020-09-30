@@ -106,8 +106,9 @@
 		border-radius: 5px;
 		width: 150px;
 		height: 30px;
-		box-shadow: 0 0 0 3px var(--color-transparent);
+		box-shadow: 0 0 0 1px var(--color-transparent);
 	}
 	input[type='text']:focus {
 		width: 400px;
+		box-shadow: 0 0 0 4px var(--color-transparent),0 0 0 8px var(--color-transparent)
 	}
