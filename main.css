@@ -111,17 +111,11 @@ input[type=search] {
 }
 
 
-input::-webkit-search-decoration,
-input::-webkit-search-cancel-button {
-	display: none; 
-}
+
 input[type=search] {
 	margin: 0 auto;
 	display: block;
-	background-image: url('https://api.iconify.design/dashicons:search.svg');
-  background-position: 14px 14px;
-  background-repeat: no-repeat;
-	background-color: var(--color);
+	background: var(--background) url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 10px center;
 	box-shadow: 0 0 0 2px var(--color-transparent);
 	border: none;
 	padding: 9px 10px 9px 32px;
