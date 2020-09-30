@@ -101,7 +101,7 @@
 	}
 	input[type='text'] {
 		opacity: 0.8;
-		transition-duration: 0.5s;
+		transition: width 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 		background: var(--background);
 		border: 2px solid var(--color);
 		border-radius: 5px;
