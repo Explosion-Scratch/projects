@@ -132,11 +132,3 @@ input[type=search]:focus {
 	background-color: var(--background);
 	border-color: var(--color);
 }
-
-
-input:-moz-placeholder {
-	color: #999;
-}
-input::-webkit-input-placeholder {
-	color: #999;
-}
