@@ -7,4 +7,6 @@
 		--text: white;
 		--background: #101010;
 		--shadow: rgba(0,0,0,.35);
+		--input-height: 50px;
+		--input-border-radius: 5px;
 	}
