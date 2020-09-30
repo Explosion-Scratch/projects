@@ -1,47 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 @import 'vars.css';
-* {
-	margin: 0;
-	padding: 0;
-	outline: none;
-	box-sizing: border-box;
-	font-family: 'Poppins', sans-serif;
-	transition: color, background-color, box-shadow 0.5s;
-}
-
-html,
-body {
-	color: var(--text);
-	background: var(--background);
-	display: grid;
-	height: 100%;
-	place-items: center;
-	text-align: center;
-}
-
-.wrapper {
-	background: var(--background);
-	padding: 20px 30px;
-	box-shadow: 0px 0px 10px var(--color);
-	border-radius: 10px;
-	max-width: 570px;
-	min-width: 500px;
-}
-
-.wrapper:hover {
-	box-shadow: 0px 0px 20px var(--color);
-}
-
-.wrapper .text {
-	font-size: 35px;
-	font-weight: 600;
-}
-
-.wrapper p {
-	font-size: 20px;
-	font-weight: 400;
-	line-height: 20px;
-}
 
 .wrapper .btns {
 	display: flex;
