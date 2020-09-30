@@ -113,6 +113,5 @@
 	}
 	input[type='text']:focus {
 		width: 100%;
-		box-shadow: 0 0 0 2px var(--color-transparent),0 0 0 7px var(--color-transparent);
+		box-shadow: 0 0 0 2px var(--color-transparent),0 0 0 5px var(--color-transparent);
 	}
-	
