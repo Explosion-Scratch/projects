@@ -103,7 +103,7 @@
 		--input-height: 50px;
 	}
 	.inputs {
-		width: 200px;
+		width: 400px;
 		height: var(--input-height);
 		display: block;
 		padding: 0px;
@@ -111,16 +111,18 @@
 		box-shadow: 0 0 0 5px red;
 	}
 	.inputs input, .inputs button {
+		outline: none;
+		border: none;
 		height: var(--input-height);
 		padding: 4px;
 	}
 	.inputs input {
 		float: left; 
-		width: 90%;
+		width: 80%;
 		border-radius: 10px 0 0 10px;
 	}
 	.inputs button {
 		float: right;
-		width: 10%;
+		width: 20%;
 		border-radius: 0 10px 10px 0;
 	}
