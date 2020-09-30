@@ -121,9 +121,12 @@
 }
 
 #input[type='text'] {
+	border-radius: none !important;
 	box-shadow: none;
+	border-bottom: 1px solid #999;
 }
 #input[type='text']:focus {
+	border-bottom: 1px solid var(--color);
 	box-shadow: none;
 }
 
