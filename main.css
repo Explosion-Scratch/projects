@@ -44,7 +44,6 @@
 
 	.button,
 	[class*="button-"] {
-		margin: 0 auto;
 		border: 1px dashed var(--color);
 		position: relative;
 		display: block;
@@ -122,6 +121,14 @@
 
 #input[type='text'] {
 	box-shadow: none;
+}
+#input[type='text']::after {
+	content: '';
+	background: var(--color);
+	width: 0%;
+}
+#input[type='text']:focus::after {
+	width: 100%;
 }
 #input[type='text']:focus {
 	box-shadow: none;
