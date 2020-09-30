@@ -110,8 +110,8 @@
 		border-radius: var(--input-border-radius);
 		box-shadow: 0 0 0 2px var(--color-transparent);
 	}
-	.inputs:hover {
-		width: 100%;
+	.inputs input:focus {
+		box-shadow: 0 0 0 2px var(--color-transparent), 0 0 0 5px var(--color-transparent);
 	}
 	.inputs input, .inputs button {
 		outline: none;
