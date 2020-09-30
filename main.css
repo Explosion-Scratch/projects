@@ -104,6 +104,9 @@
 		padding: 2px;
 		border-radius: 10px;
 	}
+	.inputs input, .inputs button {
+		padding: 4px;
+	}
 	.inputs input {
 		border-radius: 10px 0 0 10px;
 	}
