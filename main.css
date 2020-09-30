@@ -100,6 +100,7 @@ h1 {
 	margin: 0 auto;
 }
 input[type='text'] {
+	padding: 5px;
 	opacity: 0.8;
 	transition: width 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 	background: var(--background);
@@ -114,21 +115,23 @@ input[type='text']:focus {
 	box-shadow: 0 0 0 2px var(--color-transparent),0 0 0 5px var(--color-transparent);
 }
 .input-icons i { 
-	position: absolute; 
-} 
-	
-.input-icons { 
-	width: 100%; 
-	margin-bottom: 10px; 
-} 
-	
-.icon { 
-	padding: 10px; 
-	min-width: 40px; 
-} 
-	
-.input-field { 
-	width: 100%; 
-	padding: 10px; 
-	text-align: center; 
-}
+            position: absolute; 
+        } 
+          
+        .input-icons { 
+            width: 100%; 
+            margin-bottom: 10px; 
+        } 
+          
+        .icon { 
+            padding: 10px; 
+            color: green; 
+            min-width: 50px; 
+            text-align: center; 
+        } 
+          
+        .input-field { 
+            width: 100%; 
+            padding: 10px; 
+            text-align: center; 
+        } 
