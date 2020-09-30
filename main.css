@@ -123,8 +123,8 @@
 	.inputs input {
 		background: var(--background);
 		float: left; 
-		width: 80%;
-		border-radius: var(--input-border-radius) 0 0 var(--input-border-radius);
+		width: 100%;
+		border-radius: var(--input-border-radius);
 	}
 	.inputs button {
 		background-color: var(--background);
@@ -132,5 +132,6 @@
 		border: 2px solid var(--color-transparent);
 		float: right;
 		width: 20%;
+		z-index: 1;
 		border-radius: 0 var(--input-border-radius) var(--input-border-radius) 0;
 	}
