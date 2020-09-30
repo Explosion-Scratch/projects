@@ -103,12 +103,12 @@
 		--input-height: 50px;
 	}
 	.inputs {
-		width: 400px;
+		width: 100%;
 		height: var(--input-height);
 		display: block;
 		padding: 0px;
 		border-radius: 10px;
-		box-shadow: 0 0 0 5px var(--color-transparent);
+		box-shadow: 0 0 0 2px var(--color-transparent);
 	}
 	.inputs input, .inputs button {
 		outline: none;
