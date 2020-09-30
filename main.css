@@ -100,9 +100,12 @@
 		margin: 0 auto;
 	}
 	.inputs {
+		width: 200px;
+		height: 30p;
 		display: block;
 		padding: 2px;
 		border-radius: 10px;
+		box-shadow: 0 0 0 5px red;
 	}
 	.inputs input, .inputs button {
 		padding: 4px;
