@@ -120,7 +120,12 @@
 	font-size: 100%;
 }
 
-
+#imput[type='text'] {
+	box-shadow: none;
+}
+#input[type='text'] {
+	box-shadow: none;
+}
 
 #input[type=search] {
 	margin: 0 auto;
