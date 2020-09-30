@@ -6,6 +6,9 @@
 	<div class='text-container' style='background: rgba(0,0,0,.35); color: white; border-radius: 10px; border:5px solid rgba(0,0,0, 0.2)'>
 		<h1>Random background image generator!</h1>
 		<p>Reload the page to see another image!</p>
+		<button onclick="refreshCSS()"> 
+        Refresh CSS 
+    </button> 
 	</div>
 
 </body>
@@ -39,3 +42,19 @@
 			});
 	</script>
 </head>
+<script> 
+        refreshCSS = () => { 
+            let links = document.getElementsByTagName('link'); 
+            for (let i = 0; i < links.length; i++) { 
+                if (links[i].getAttribute('rel') == 'stylesheet') { 
+                    let href = links[i].getAttribute('href') 
+                                            .split('?')[0]; 
+                      
+                    let newHref = href + '?version='  
+                                + new Date().getMilliseconds(); 
+                      
+                    links[i].setAttribute('href', newHref); 
+                } 
+            } 
+        } 
+    </script> 
