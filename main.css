@@ -113,3 +113,6 @@
 		width: 400px;
 		box-shadow: 0 0 0 2px var(--color-transparent),0 0 0 7px var(--color-transparent);
 	}
+	input[type='text']::after {
+		content: 'a'
+	}
