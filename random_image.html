@@ -14,10 +14,6 @@
 </body>
 <div class="se-pre-con"></div>
 <style>
-* {
-	text-align: center !important;
-	color: white !important;
-}
 .no-js #loader { display: none;  }
 .js #loader { display: block; position: absolute; left: 100px; top: 0; }
 .se-pre-con {
@@ -43,6 +39,20 @@
 	</script>
 </head>
 <style>
+	* {
+	text-align: center !important;
+	color: white !important;
+}
+	button {
+		transition-duration: 0.5s;
+		background-color: rgba(0,0,0, .25);
+		border-radius: 10px;
+		border: 5px solid rgba(0,0,0, .2);
+	}
+	button:hover {
+		background-color: rgba(0,0,0,.2);
+		border: 5px solid rgba(0,0,0,.1);
+	}
 	body {
 		background-image: url(https://source.unsplash.com/random/?landscape);
 		background-size: cover;
