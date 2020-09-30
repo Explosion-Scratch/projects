@@ -108,7 +108,7 @@
 		display: block;
 		padding: 0px;
 		border-radius: 10px;
-		box-shadow: 0 0 0 5px red;
+		box-shadow: 0 0 0 5px var(--color-transparent);
 	}
 	.inputs input, .inputs button {
 		outline: none;
@@ -117,11 +117,14 @@
 		padding: 4px;
 	}
 	.inputs input {
+		background: var(--background);
 		float: left; 
 		width: 80%;
 		border-radius: 10px 0 0 10px;
 	}
 	.inputs button {
+		background: var(--color);
+		color: var(--background);
 		float: right;
 		width: 20%;
 		border-radius: 0 10px 10px 0;
