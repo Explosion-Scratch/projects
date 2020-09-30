@@ -103,18 +103,22 @@
 		--input-height: 50px;
 	}
 	.inputs {
-		width: 100%;
+		width: 20%;
 		height: var(--input-height);
 		display: block;
 		padding: 0px;
 		border-radius: 10px;
 		box-shadow: 0 0 0 2px var(--color-transparent);
 	}
+	.inputs:hover {
+		width: 100%;
+	}
 	.inputs input, .inputs button {
 		outline: none;
 		border: none;
 		height: var(--input-height);
 		padding: 4px;
+		overflow: hidden;
 	}
 	.inputs input {
 		background: var(--background);
