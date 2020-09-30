@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 
 * {
-	--main-color: #2ef570;
+	--color: #2ef570;
 	--secondary-color: #38f8b8;
 	--text: white;
 	--background: #101010;
