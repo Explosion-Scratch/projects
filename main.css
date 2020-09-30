@@ -113,22 +113,3 @@ input::-webkit-search-decoration,
 input::-webkit-search-cancel-button {
 	display: none; 
 }
-
-
-input[type=search] {
-	margin: 0 auto;
-	display: block;
-	background: var(--background) url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
-	box-shadow: 0 0 0 2px var(--color-transparent);
-	border: none;
-	padding: 9px 10px 9px 32px;
-	width: 0px;
-	border-radius: 10px;
-	transition: all .8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-input[type=search]:hover {
-	box-shadow: 0 0 0 2px var(--color-transparent), 0 0 0 5px var(--color-transparent);
-	width: 400px;
-	background-color: var(--background);
-	border-color: var(--color);
-}
