@@ -125,7 +125,8 @@
 #input[type='text']::after {
 	content: '';
 	background: var(--color);
-	width: 0%;
+	width: 50%;
+	height: 2px;
 }
 #input[type='text']:focus::after {
 	width: 100%;
