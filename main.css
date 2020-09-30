@@ -107,7 +107,7 @@
 		height: var(--input-height);
 		display: block;
 		padding: 0px;
-		border-radius: 10px;
+		border-radius: var(--input-border-radius);
 		box-shadow: 0 0 0 2px var(--color-transparent);
 	}
 	.inputs:hover {
@@ -124,7 +124,7 @@
 		background: var(--background);
 		float: left; 
 		width: 80%;
-		border-radius: 10px 0 0 10px;
+		border-radius: var(--input-border-radius) 0 0 var(--input-border-radius);
 	}
 	.inputs button {
 		background-color: var(--background);
@@ -132,5 +132,5 @@
 		border: 2px solid var(--color-transparent);
 		float: right;
 		width: 20%;
-		border-radius: 0 10px 10px 0;
+		border-radius: 0 var(--input-border-radius) var(--input-border-radius) 0;
 	}
