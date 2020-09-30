@@ -10,7 +10,7 @@
 	}
 
 	body {
-		background-color: #121212;
+		background-color: var(--background);
 	}
 	ul {
 		padding: 20px;
