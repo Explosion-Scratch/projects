@@ -103,8 +103,9 @@
 		--input-height: 50px;
 	}
 	.inputs {
+		margin: 0 auto;
 		transition: width 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.5s ease, box-shadow 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-		width: 20%;
+		width: 200px;
 		height: var(--input-height);
 		display: block;
 		padding: 0px;
