@@ -102,11 +102,11 @@
 	input[type='text'] {
 		transition-duration: 0.5s;
 		background: var(--background);
-		border: 2px solid var(--main-color);
+		border: 2px solid var(--color);
 		border-radius: 5px;
 		width: 150px;
 		height: 30px;
-		box-shadow: 0 0 5px 0 rgba(0,150,255,.35);
+		box-shadow: 0 0 0 3px var(--color-transparent);
 	}
 	input[type='text']:focus {
 		width: 400px;
