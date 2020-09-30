@@ -33,7 +33,7 @@
 		text-decoration: none;
 		background-size: 200% auto;
 		background-position: -0% 0;
-		background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 50%, var(--color-transparent) 50%);
+		background-image: linear-gradient(to right, transparent 50%, var(--color-transparent) 50%);
 		transition: all 0.3s ease-out;
 	}
 
@@ -54,7 +54,7 @@
 		height: 3.5em;
 		font: 300 1em/3.5em 'Anonymous Pro', sans-serif;
 		text-decoration: none;
-		text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+		text-shadow: 0 1px 3px var(--shadow);
 		letter-spacing: .08em;
 		color: var(--color);
 		background: var(--background);
@@ -68,7 +68,7 @@
 	.button:hover,
 	[class*="button-"]:hover {
 		background: var(--background);
-		box-shadow: 0 0 3px rgba(0, 0, 0, 0.5) inset;
+		box-shadow: 0 0 3px var(--shadow) inset;
 	}
 
 	.button-hover:hover {
