@@ -99,7 +99,7 @@
 		text-align: center;
 		margin: 0 auto;
 	}
-	.input-container[type='text'] {
+	input[type='text'] {
 		opacity: 0.8;
 		transition-duration: 0.5s;
 		background: var(--background);
@@ -109,7 +109,7 @@
 		height: 30px;
 		box-shadow: 0 0 0 1px var(--color-transparent);
 	}
-	.input-container[type='text']:focus {
+	input[type='text']:focus {
 		width: 400px;
 		box-shadow: 0 0 0 2px var(--color-transparent),0 0 0 7px var(--color-transparent);
 	}
