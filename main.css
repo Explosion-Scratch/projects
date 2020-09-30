@@ -39,7 +39,7 @@
 
 	a:hover {
 		border-bottom: 1px solid transparent;
-		color: black;
+		color: var(--background);
 		background-position: -100% 0;
 	}
 
@@ -57,7 +57,7 @@
 		text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
 		letter-spacing: .08em;
 		color: var(--color);
-		background: black;
+		background: var(--background);
 		border-radius: 5px;
 		-moz-transition: ease 0.35s all;
 		-o-transition: ease 0.35s all;
@@ -67,7 +67,7 @@
 
 	.button:hover,
 	[class*="button-"]:hover {
-		background: black;
+		background: var(--background);
 		box-shadow: 0 0 3px rgba(0, 0, 0, 0.5) inset;
 	}
 
