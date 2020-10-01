@@ -24,7 +24,9 @@
 		font-weight: 200;
 		color: var(--color);
 	}
-
+	strong {
+		font-weight: 800;
+	}
 	a {
 		border-bottom: 1px solid var(--color);
 		padding: 2px;
