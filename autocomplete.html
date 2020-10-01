@@ -1,9 +1,9 @@
 <form>
-  <input id='input' type="text" onkeyup="pressKey()" />
+  <input id='input' type="text" onkeypress="pressKey()" />
 </form><script>
 	function pressKey() {
-		key=myKeyPress(event);
-		if (key === "(")
+		alert(myKeyPress(event));
+		if ("(" === "(")
 		write(')')
 	}
 	function myKeyPress(e){
