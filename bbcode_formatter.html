@@ -1,11 +1,11 @@
 <textarea style='width: 100%; height: 40%;' id='text' placeholder="Testing">Hello.</textarea>
 <button onclick='parse()'>Run</button>
-<p>Testing this, I wonder if it'll work.</p>
+<p id='element'>Testing this, I wonder if it'll work.</p>
 <p id='output'></p>
 <script>
 	function parse() {
-  	var x = document.getElementById("text").innerHTML;
-		console.log(x);
+  	var x = document.getElementById("element").innerHTML;
+		alert(x);
 }
 	}
 	function bbcode_format($str){
