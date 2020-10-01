@@ -1,7 +1,7 @@
 <head>
 	<link rel='stylesheet' href='main.css'>
 </head>
-<body>
+<body onload='get_text()'>
 	<h1>Notetaking</h1>
 	<p>A simple note-taking thing I'm working on with JS.</p>
 	<textarea style='width: 100%; height: 60%; resize: vertical;' id='input' placeholder="Put stuff here"></textarea>
@@ -9,6 +9,10 @@
 
 <script>
 	var text = document.getElementById('input').value;
+	document.cookie = text;
+	function get_text() {
+		
+	}
 </script>
 
 
