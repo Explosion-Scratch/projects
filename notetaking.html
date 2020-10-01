@@ -5,7 +5,7 @@
 	<div class='container'>
 		<h1>Notetaking</h1>
 		<p>A simple note-taking thing I'm working on with JS. When you reload the page it should keep what you put in the box when you clicked save. This works using <a href='https://www.w3schools.com/jsref/prop_win_localstorage.asp'>JavaScript localStorage</a></p>
-		<textarea style='width: 100%; height: 60%; resize: vertical;' id='input' placeholder="Put stuff here"></textarea>
+		<textarea onkeypress='checkCookie()' style='width: 100%; height: 60%; resize: vertical;' id='input' placeholder="Put stuff here"></textarea>
 		<button onclick='checkCookie()'id='button'>Save</button>
 	</div>
 </body>
