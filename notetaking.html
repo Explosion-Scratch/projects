@@ -14,7 +14,8 @@
 		localStorage.setItem('text_cookie', text)
 	}
 	function writeCookie() {
-		localStorage.getItem('text_cookie')
+		cookie = localStorage.getItem('text_cookie');
+		document.getElementById('input').value = cookie;
 	}
 </script>
 
