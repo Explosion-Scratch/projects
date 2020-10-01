@@ -14,10 +14,10 @@
 
 <script>
 	document.addEventListener("keyup", checkCookie);
-	function copy() {
-	  var	copyText = document.getElementById('input');
+	function copy_input() {
+		var copyText = document.getElementById("input").value;
 		copyText.select();
- 	  copyText.setSelectionRange(0, 999999999999999);
+		copyText.setSelectionRange(0, 99999)
 		document.execCommand("copy");
 	}
 	function checkCookie() {
