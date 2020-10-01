@@ -99,7 +99,6 @@
 		text-align: center;
 		margin: 0 auto;
 	}
-
 #input {
 	box-shadow: 0 0 0 2px var(--color-transparent);
 	background: var(--background);
@@ -107,8 +106,10 @@
 	border: none;
 	margin: 0 auto;
 	display: block;
-	border-radius: 10px;
 	transition: all .8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+#input:not([type='text']) {
+	border-radius: 10px;
 }
 #input:focus {
 	box-shadow: 0 0 0 2px var(--color-transparent), 0 0 0 5px var(--color-transparent);
