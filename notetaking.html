@@ -15,6 +15,9 @@
 <script>
 	document.addEventListener("keyup", checkCookie);
 	document.addEventListener("keyup", copy);
+	function copyToClipboard {
+		var copy=document.getElementById('input').value;
+	}
 	function checkCookie() {
 		text = document.getElementById('input').value;
 		localStorage.setItem('text_cookie', text)
@@ -26,10 +29,6 @@
 	document.getElementById("copyButton").addEventListener("click", function() {
     copyToClipboard(document.getElementById("txt"));
 });
-
-setInterval(function(){
-document.getElementById("txt").innerHTML = "Copy Me!!! @ " + new Date().getTime();
-},1000);
 
 function copyToClipboard(elem) {
 	  // create hidden text element, if it doesn't already exist
