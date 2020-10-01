@@ -27,9 +27,7 @@
 		cookie = localStorage.getItem('text_cookie');
 		document.getElementById('input').value = cookie;
 	}
-	document.getElementById("copyButton").addEventListener("click", function() {
-    copyToClipboard(document.getElementById("txt"));
-});
+	
 
 function copyToClipboard(elem) {
 	  // create hidden text element, if it doesn't already exist
