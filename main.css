@@ -120,16 +120,6 @@
 	font-size: 100%;
 }
 
-#input[type='text'] {
-	border-radius: none !important;
-	box-shadow: none;
-	border-bottom: 1px solid #999;
-}
-#input[type='text']:focus {
-	border-bottom: 1px solid var(--color);
-	box-shadow: none;
-}
-
 #input[type=search] {
 	margin: 0 auto;
 	display: block;
@@ -146,4 +136,14 @@
 	width: 400px;
 	background-color: var(--background);
 	border-color: var(--color);
+}
+#input[type='text'] {
+	border-radius: none !important;
+	box-shadow: none;
+	border-bottom: 1px solid #999;
+}
+#input[type='text']:focus {
+	border-radius: none !important;
+	border-bottom: 1px solid var(--color);
+	box-shadow: none;
 }
