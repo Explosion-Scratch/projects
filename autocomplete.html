@@ -1,6 +1,7 @@
 <form>
-  <input id='input' type="text" onkeyup="pressKey()" />
-</form><script>
+  <input id='input' type="text" onkeydown="pressKey()" />
+</form>
+<script>
 	function pressKey() {
 		var key = myKeyPress(event);
 		if ( key === "(")
