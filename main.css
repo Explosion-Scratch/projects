@@ -150,6 +150,9 @@
 	box-shadow: none;
 }
 #button {
+	margin: 10px;
+	outline: none;
+	border: none;
 	background: transparent;
 	border-radius: 5px;
 	padding: 5px;
