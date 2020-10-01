@@ -149,3 +149,10 @@
 	border-bottom: 1px solid var(--color);
 	box-shadow: none;
 }
+#button {
+	background: transparent;
+	border-radius: 5px;
+	padding: 5px;
+	box-shadow: 0 0 0 2px var(--color-transparent);
+}
+
