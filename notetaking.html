@@ -8,14 +8,14 @@
 		<h1>Notetaking</h1>
 		<p>A simple note-taking thing I'm working on with JS. When you reload the page it should keep what you put in the box when you clicked save. This works using <a href='https://www.w3schools.com/jsref/prop_win_localstorage.asp'>JavaScript localStorage</a>. Feel free to check out the version that parses HTML <a href='html_parser.html'>here</a></p>
 		<textarea style='width: 100%; height: 60%; resize: vertical;' id='input' placeholder="Put stuff here"></textarea>
-		<button onclick='checkCookie()'id='button'>Save</button><button onclick="copy">Copy</button>
+		<button onclick='checkCookie()'id='button'>Save</button><button onclick="copy()">Copy</button>
 	</div>
 </body>
 
 <script>
 	document.addEventListener("keyup", checkCookie);
-	function copy_input() {
-		var copyText = document.getElementById("input").value;
+	function copy() {
+		var copyText = document.getElementById("input");
 		copyText.select();
 		copyText.setSelectionRange(0, 99999)
 		document.execCommand("copy");
