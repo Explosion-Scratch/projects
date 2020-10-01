@@ -141,6 +141,7 @@
 #input[type='text'] {
 	border-radius: none !important;
 	box-shadow: none;
+	background: rgba(32, 32, 32, 0.4);
 	border-bottom: 1px solid #999;
 }
 #input[type='text']:focus {
