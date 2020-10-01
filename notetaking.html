@@ -14,8 +14,9 @@
 
 <script>
 	document.addEventListener("keyup", checkCookie);
-	document.addEventListener("keyup", copy);
-	function copy {
+	document.addEventListener("keyup", copy());
+	function copy() {
+		copyText=getElementById('input');
 		copyText.select();
  	  copyText.setSelectionRange(0, 999999999999999);
 		document.execCommand("copy");
