@@ -16,8 +16,7 @@
 	function go() {
     var c1 = document.getElementById('area1').value;
     var d1 = document.getElementById('output');
-		var html = bbcodeParser.bbcodeToHtml(c1);
-    d1.innerHTML = html;
+    d1.innerHTML = c1;
 }
 </script>
 <style>
@@ -26,4 +25,3 @@
 		height: 150px;
 	}
 </style>
-<script src='bbcode_parse.js'></script>
