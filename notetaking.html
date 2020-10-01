@@ -15,7 +15,10 @@
 <script>
 	document.addEventListener("keyup", checkCookie);
 	document.addEventListener("keyup", copy);
-
+	function copy {
+		copyText.select();
+ 	 copyText.setSelectionRange(0, 99999);
+	}
 	function checkCookie() {
 		text = document.getElementById('input').value;
 		localStorage.setItem('text_cookie', text)
