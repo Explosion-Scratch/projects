@@ -1,5 +1,5 @@
 <form>
-  <input type="text" onkeypress="return myKeyPress(event)" />
+  <input type="text" onkeypress="alert(myKeyPress(event))" />
 </form><script>
 	function myKeyPress(e){
     var keynum;
@@ -12,5 +12,5 @@
 
     return(String.fromCharCode(keynum));
   }
-	
+
 </script>
