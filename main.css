@@ -168,3 +168,18 @@
   box-shadow: 1px 1px var(--color-transparent), 2px 2px var(--color-transparent), 3px 3px var(--color-transparent);
   transform: translateX(-3px);
 }
+#back {
+ position: absolute; 
+ text-decoration: none; 
+ top: 2px;
+ left: 10px;
+ color: var(--color);
+ border-radius: 2px;
+ opacity: .8;
+ border-bottom: none;
+}
+#back:hover {
+ color: var(--secondary-color);
+ opacity: 1;
+ background: none;
+}
