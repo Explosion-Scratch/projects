@@ -1,4 +1,15 @@
-<textarea placeholder='text' id='text'></textarea>
-<script>
-	
+<form>
+  <input type="text" onkeypress="return myKeyPress(event)" />
+</form><script>
+	function myKeyPress(e){
+    var keynum;
+
+    if(window.event) { // IE                    
+      keynum = e.keyCode;
+    } else if(e.which){ // Netscape/Firefox/Opera                   
+      keynum = e.which;
+    }
+
+    alert(String.fromCharCode(keynum));
+  }
 </script>
