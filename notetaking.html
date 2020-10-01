@@ -11,7 +11,7 @@
 </body>
 
 <script>
-	document.addEventListener("keypress", checkCookie);
+	document.addEventListener("keyup", checkCookie);
 	function checkCookie() {
 		text = document.getElementById('input').value;
 		localStorage.setItem('text_cookie', text)
