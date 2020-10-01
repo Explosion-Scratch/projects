@@ -1,46 +1,18 @@
-<textarea onload='sd()' style='width: 100%; height: 40%;' id='text' placeholder="Testing">Hello.</textarea>
-<p id='element'>Testing this, I wonder if it'll work.</p>
-<p id='output'></p>
+<!DOCTYPE html>
+<body>
+    <form id="form1">
+        <div>
+            <textarea id="area1" rows="5">Yes</textarea>
+            <input type="button" value="get txt" onclick="go()" />
+            <br />
+            <p id="as">Now what</p>
+        </div>
+    </form>
+</body>
 <script>
-	function sd() {
-  	console.log('hello');
-	}
-	
-	function bbcode_format($str){
-		// Convert all special HTML characters into entities to display literally
-		$str = htmlentities($str);
-		// The array of regex patterns to look for
-		$format_search =  array(
-				'#\[b\](.*?)\[/b\]#is', // Bold ([b]text[/b]
-				'#\[i\](.*?)\[/i\]#is', // Italics ([i]text[/i]
-				'#\[u\](.*?)\[/u\]#is', // Underline ([u]text[/u])
-				'#\[s\](.*?)\[/s\]#is', // Strikethrough ([s]text[/s])
-				'#\[quote\](.*?)\[/quote\]#is', // Quote ([quote]text[/quote])
-				'#\[code\](.*?)\[/code\]#is', // Monospaced code [code]text[/code])
-				'#\[size=([1-9]|1[0-9]|20)\](.*?)\[/size\]#is', // Font size 1-20px [size=20]text[/size])
-				'#\[color=\#?([A-F0-9]{3}|[A-F0-9]{6})\](.*?)\[/color\]#is', // Font color ([color=#00F]text[/color])
-				'#\[url=((?:ftp|https?)://.*?)\](.*?)\[/url\]#i', // Hyperlink with descriptive text ([url=http://url]text[/url])
-				'#\[url\]((?:ftp|https?)://.*?)\[/url\]#i', // Hyperlink ([url]http://url[/url])
-				'#\[img\](https?://.*?\.(?:jpg|jpeg|gif|png|bmp))\[/img\]#i' // Image ([img]http://url_to_image[/img])
-		);
-		// The matching array of strings to replace matches with
-		$format_replace = array(
-				'<strong>$1</strong>',
-				'<em>$1</em>',
-				'<span style="text-decoration: underline;">$1</span>',
-				'<span style="text-decoration: line-through;">$1</span>',
-				'<blockquote>$1</blockquote>',
-				'<pre>$1</'.'pre>',
-				'<span style="font-size: $1px;">$2</span>',
-				'<span style="color: #$1;">$2</span>',
-				'<a href="$1">$2</a>',
-				'<a href="$1">$1</a>',
-				'<img src="$1" alt="" />'
-		);
-		// Perform the actual conversion
-		$str = preg_replace($format_search, $format_replace, $str);
-		// Convert line breaks in the <br /> tag
-		$str = nl2br($str);
-		return $str;
-	}
+	function go() {
+    var c1 = document.getElementById('area1').value;
+    var d1 = document.getElementById('as');
+    d1.innerHTML = c1;
+}
 </script>
