@@ -2,8 +2,8 @@
   <input id='input' type="text" onkeypress="pressKey()" />
 </form><script>
 	function pressKey() {
-		alert(myKeyPress(event));
-		if ("(" === "(")
+		var key = myKeyPress(event);
+		if ( key === "(")
 		write(')')
 	}
 	function myKeyPress(e){
