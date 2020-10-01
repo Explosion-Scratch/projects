@@ -7,7 +7,7 @@
 <body>
     <form id="form1">
         <div>
-            <textarea onkeyup='go()' id="input" placeholder='Type something in here! Feel free to use HTML tags, they parse!'></textarea>
+            <textarea onload='writeCookie()' onkeyup='go()' id="input" placeholder='Type something in here! Feel free to use HTML tags, they parse!'></textarea>
             <input id='button' type="button" value="Run!" onclick="go()" />
             <br />
             <p id="output">Click the run button or start typing to see the output!</p>
@@ -20,7 +20,7 @@
     var d1 = document.getElementById('output');
     d1.innerHTML = c1;
 	}
-	document.addEventListener("keyup", checkCookie);
+	document.addEventListener("keyup", checkCookie());
 	function checkCookie() {
 		text = document.getElementById('input').value;
 		localStorage.setItem('text_cookie', text)
