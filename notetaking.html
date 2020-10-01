@@ -15,8 +15,9 @@
 <script>
 	document.addEventListener("keyup", checkCookie);
 	document.addEventListener("keyup", copy);
-	function copyToClipboard {
+	function copy {
 		var copy=document.getElementById('input').value;
+		copyToClipboard(copy);
 	}
 	function checkCookie() {
 		text = document.getElementById('input').value;
