@@ -1,6 +1,9 @@
 <form>
-  <input type="text" onkeypress="alert(myKeyPress(event))" />
+  <input type="text" onkeypress="pressKey()" />
 </form><script>
+	function pressKey() {
+		myKeyPress(event);
+	}
 	function myKeyPress(e){
     var keynum;
 
@@ -13,6 +16,6 @@
     return(String.fromCharCode(keynum));
   }
 	function write(char) {
-		
+
 	}
 </script>
