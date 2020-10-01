@@ -11,7 +11,7 @@
 	var text = document.getElementById('input').value;
 	document.cookie = text;
 	function get_text() {
-		
+		document.getElementById('input').value = document.cookie;
 	}
 </script>
 
