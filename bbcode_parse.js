@@ -1,173 +1,169 @@
-// JS function to convert BBCode and HTML code - http;//coursesweb.net/javascript/
-var BBCodeHTML = function() {
-  var me = this;            // stores the object instance
-  var token_match = /{[A-Z_]+[0-9]*}/ig;
+var bbcodeParser = {};
 
-  // regular expressions for the different bbcode tokens
-  var tokens = {
-    'URL' : '((?:(?:[a-z][a-z\\d+\\-.]*:\\/{2}(?:(?:[a-z0-9\\-._~\\!$&\'*+,;=:@|]+|%[\\dA-F]{2})+|[0-9.]+|\\[[a-z0-9.]+:[a-z0-9.]+:[a-z0-9.:]+\\])(?::\\d*)?(?:\\/(?:[a-z0-9\\-._~\\!$&\'*+,;=:@|]+|%[\\dA-F]{2})*)*(?:\\?(?:[a-z0-9\\-._~\\!$&\'*+,;=:@\\/?|]+|%[\\dA-F]{2})*)?(?:#(?:[a-z0-9\\-._~\\!$&\'*+,;=:@\\/?|]+|%[\\dA-F]{2})*)?)|(?:www\\.(?:[a-z0-9\\-._~\\!$&\'*+,;=:@|]+|%[\\dA-F]{2})+(?::\\d*)?(?:\\/(?:[a-z0-9\\-._~\\!$&\'*+,;=:@|]+|%[\\dA-F]{2})*)*(?:\\?(?:[a-z0-9\\-._~\\!$&\'*+,;=:@\\/?|]+|%[\\dA-F]{2})*)?(?:#(?:[a-z0-9\\-._~\\!$&\'*+,;=:@\\/?|]+|%[\\dA-F]{2})*)?)))',
-    'LINK' : '([a-z0-9\-\./]+[^"\' ]*)',
-    'EMAIL' : '((?:[\\w\!\#$\%\&\'\*\+\-\/\=\?\^\`{\|\}\~]+\.)*(?:[\\w\!\#$\%\'\*\+\-\/\=\?\^\`{\|\}\~]|&)+@(?:(?:(?:(?:(?:[a-z0-9]{1}[a-z0-9\-]{0,62}[a-z0-9]{1})|[a-z])\.)+[a-z]{2,6})|(?:\\d{1,3}\.){3}\\d{1,3}(?:\:\\d{1,5})?))',
-    'TEXT' : '(.*?)',
-    'SIMPLETEXT' : '([a-zA-Z0-9-+.,_ ]+)',
-    'INTTEXT' : '([a-zA-Z0-9-+,_. ]+)',
-    'IDENTIFIER' : '([a-zA-Z0-9-_]+)',
-    'COLOR' : '([a-z]+|#[0-9abcdef]+)',
-    'NUMBER'  : '([0-9]+)'
-  };
+(function() {
+	var token_match = /{[A-Z_]+[0-9]*}/g;
 
-  var bbcode_matches = [];        // matches for bbcode to html
+	// regular expressions for the different bbcode tokens
+	bbcodeParser.tokens = {
+		'URL'			: '((?:(?:[a-z][a-z\\d+\\-.]*:\\/{2}(?:(?:[a-z0-9\\-._~\\!$&\'*+,;=:@|]+|%[\\dA-F]{2})+|[0-9.]+|\\[[a-z0-9.]+:[a-z0-9.]+:[a-z0-9.:]+\\])(?::\\d*)?(?:\\/(?:[a-z0-9\\-._~\\!$&\'*+,;=:@|]+|%[\\dA-F]{2})*)*(?:\\?(?:[a-z0-9\\-._~\\!$&\'*+,;=:@\\/?|]+|%[\\dA-F]{2})*)?(?:#(?:[a-z0-9\\-._~\\!$&\'*+,;=:@\\/?|]+|%[\\dA-F]{2})*)?)|(?:www\\.(?:[a-z0-9\\-._~\\!$&\'*+,;=:@|]+|%[\\dA-F]{2})+(?::\\d*)?(?:\\/(?:[a-z0-9\\-._~\\!$&\'*+,;=:@|]+|%[\\dA-F]{2})*)*(?:\\?(?:[a-z0-9\\-._~\\!$&\'*+,;=:@\\/?|]+|%[\\dA-F]{2})*)?(?:#(?:[a-z0-9\\-._~\\!$&\'*+,;=:@\\/?|]+|%[\\dA-F]{2})*)?)))',
+		'LOCAL_URL'		: '((?:[a-z0-9\-._~\!$&\'()*+,;=:@|]+|%[\dA-F]{2})*(?:\/(?:[a-z0-9\-._~\!$&\'()*+,;=:@|]+|%[\dA-F]{2})*)*(?:\?(?:[a-z0-9\-._~\!$&\'()*+,;=:@\/?|]+|%[\dA-F]{2})*)?(?:#(?:[a-z0-9\-._~\!$&\'()*+,;=:@\/?|]+|%[\dA-F]{2})*)?)',
+		'EMAIL'			: '((?:[\\w\!\#$\%\&\'\*\+\-\/\=\?\^\`{\|\}\~]+\.)*(?:[\\w\!\#$\%\'\*\+\-\/\=\?\^\`{\|\}\~]|&)+@(?:(?:(?:(?:(?:[a-z0-9]{1}[a-z0-9\-]{0,62}[a-z0-9]{1})|[a-z])\.)+[a-z]{2,6})|(?:\\d{1,3}\.){3}\\d{1,3}(?:\:\\d{1,5})?))',
+		'TEXT'			: '(.*?)',
+		'SIMPLETEXT'	: '([a-zA-Z0-9-+.,_ ]+)',
+		'INTTEXT'		: '([a-zA-Z0-9-+,_. ]+)',
+		'IDENTIFIER'	: '([a-zA-Z0-9-_]+)',
+		'COLOR'			: '([a-z]+|#[0-9abcdef]+)',
+		'NUMBER'		: '([0-9]+)'
+	};
 
-  var html_tpls = [];             // html templates for html to bbcode
+	// matches for bbcode to html
+	bbcodeParser.bbcode_matches = [];
 
-  var html_matches = [];          // matches for html to bbcode
+	// html templates for bbcode to html
+	bbcodeParser.html_tpls = [];
 
-  var bbcode_tpls = [];           // bbcode templates for bbcode to html
+	// matches for html to bbcode
+	bbcodeParser.html_matches = [];
 
-  /**
-   * Turns a bbcode into a regular rexpression by changing the tokens into
-   * their regex form
-   */
-  var _getRegEx = function(str) {
-    var matches = str.match(token_match);
-    var nrmatches = matches.length;
-    var i = 0;
-    var replacement = '';
+	// bbcode templates for bbcode to html
+	bbcodeParser.bbcode_tpls = [];
 
-    if (nrmatches <= 0) {
-      return new RegExp(preg_quote(str), 'g');        // no tokens so return the escaped string
-    }
+	/**
+	 * Turns a bbcode into a regular rexpression by changing the tokens into
+	 * their regex form
+	 */
+	bbcodeParser._getRegEx = function(str) {
+		var matches = str.match(token_match);
+		var i = 0;
+		var replacement = '';
 
-    for(; i < nrmatches; i += 1) {
-      // Remove {, } and numbers from the token so it can match the
-      // keys in tokens
-      var token = matches[i].replace(/[{}0-9]/g, '');
+		if (matches.length <= 0) {
+			// no tokens so return the escaped string
+			return new RegExp(preg_quote(str), 'g');
+		}
 
-      if (tokens[token]) {
-        // Escape everything before the token
-        replacement += preg_quote(str.substr(0, str.indexOf(matches[i]))) + tokens[token];
+		for(; i < matches.length; i += 1) {
+			// Remove {, } and numbers from the token so it can match the
+			// keys in bbcodeParser.tokens
+			var token = matches[i].replace(/[{}0-9]/g, '');
 
-        // Remove everything before the end of the token so it can be used
-        // with the next token. Doing this so that parts can be escaped
-        str = str.substr(str.indexOf(matches[i]) + matches[i].length);
-      }
-    }
+			if (bbcodeParser.tokens[token]) {
+				// Escape everything before the token
+				replacement += preg_quote(str.substr(0, str.indexOf(matches[i]))) + bbcodeParser.tokens[token];
 
-    replacement += preg_quote(str);      // add whatever is left to the string
+				// Remove everything before the end of the token so it can be used
+				// with the next token. Doing this so that parts can be escaped
+				str = str.substr(str.indexOf(matches[i]) + matches[i].length);
+			}
+		}
 
-    return new RegExp(replacement, 'gi');
-  };
+		// add whatever is left to the string
+		replacement += preg_quote(str);
 
-  /**
-   * Turns a bbcode template into the replacement form used in regular expressions
-   * by turning the tokens in $1, $2, etc.
-   */
-  var _getTpls = function(str) {
-    var matches = str.match(token_match);
-    var nrmatches = matches.length;
-    var i = 0;
-    var replacement = '';
-    var positions = {};
-    var next_position = 0;
+		return new RegExp(replacement, 'gi');
+	};
 
-    if (nrmatches <= 0) {
-      return str;       // no tokens so return the string
-    }
+	/**
+	 * Turns a bbcode template into the replacement form used in regular expressions
+	 * by turning the tokens in $1, $2, etc.
+	 */
+	bbcodeParser._getTpls = function(str) {
+		var matches = str.match(token_match);
+		var i = 0;
+		var replacement = '';
+		var positions = {};
+		var next_position = 0;
 
-    for(; i < nrmatches; i += 1) {
-      // Remove {, } and numbers from the token so it can match the
-      // keys in tokens
-      var token = matches[i].replace(/[{}0-9]/g, '');
-      var position;
+		if (matches.length <= 0) {
+			// no tokens so return the string
+			return str;
+		}
 
-      // figure out what $# to use ($1, $2)
-      if (positions[matches[i]]) {
-        position = positions[matches[i]];         // if the token already has a position then use that
-      } else {
-        // token doesn't have a position so increment the next position
-        // and record this token's position
-        next_position += 1;
-        position = next_position;
-        positions[matches[i]] = position;
-      }
+		for(; i < matches.length; i += 1) {
+			// Remove {, } and numbers from the token so it can match the
+			// keys in bbcodeParser.tokens
+			var token = matches[i].replace(/[{}0-9]/g, '');
+			var position;
 
-      if (tokens[token]) {
-        replacement += str.substr(0, str.indexOf(matches[i])) + '$' + position;
-        str = str.substr(str.indexOf(matches[i]) + matches[i].length);
-      }
-    }
+			// figure out what $# to use ($1, $2)
+			if (positions[matches[i]]) {
+				// if the token already has a position then use that
+				position = positions[matches[i]];
+			} else {
+				// token doesn't have a position so increment the next position
+				// and record this token's position
+				next_position += 1;
+				position = next_position;
+				positions[matches[i]] = position;
+			}
 
-    replacement += str;
+			if (bbcodeParser.tokens[token]) {
+				replacement += str.substr(0, str.indexOf(matches[i])) + '$' + position;
+				str = str.substr(str.indexOf(matches[i]) + matches[i].length);
+			}
+		}
 
-    return replacement;
-  };
+		replacement += str;
 
-  /**
-   * Adds a bbcode to the list
-   */
-  me.addBBCode = function(bbcode_match, bbcode_tpl) {
-    // add the regular expressions and templates for bbcode to html
-    bbcode_matches.push(_getRegEx(bbcode_match));
-    html_tpls.push(_getTpls(bbcode_tpl));
+		return replacement;
+	};
 
-    // add the regular expressions and templates for html to bbcode
-    html_matches.push(_getRegEx(bbcode_tpl));
-    bbcode_tpls.push(_getTpls(bbcode_match));
-  };
+	/**
+	 * Adds a bbcode to the list
+	 */
+	bbcodeParser.addBBCode = function(bbcode_match, bbcode_tpl) {
+		// add the regular expressions and templates for bbcode to html
+		bbcodeParser.bbcode_matches.push(bbcodeParser._getRegEx(bbcode_match));
+		bbcodeParser.html_tpls.push(bbcodeParser._getTpls(bbcode_tpl));
 
-  /**
-   * Turns all of the added bbcodes into html
-   */
-  me.bbcodeToHtml = function(str) {
-    var nrbbcmatches = bbcode_matches.length;
-    var i = 0;
+		// add the regular expressions and templates for html to bbcode
+		bbcodeParser.html_matches.push(bbcodeParser._getRegEx(bbcode_tpl));
+		bbcodeParser.bbcode_tpls.push(bbcodeParser._getTpls(bbcode_match));
+	};
 
-    for(; i < nrbbcmatches; i += 1) {
-      str = str.replace(bbcode_matches[i], html_tpls[i]);
-    }
+	/**
+	 * Turns all of the added bbcodes into html
+	 */
+	bbcodeParser.bbcodeToHtml = function(str) {
+		var i = 0;
 
-    return str;
-  };
+		for(; i < bbcodeParser.bbcode_matches.length; i += 1) {
+			str = str.replace(bbcodeParser.bbcode_matches[i], bbcodeParser.html_tpls[i]);
+		}
 
-  /**
-   * Turns html into bbcode
-   */
-  me.htmlToBBCode = function(str) {
-    var nrhtmlmatches = html_matches.length;
-    var i = 0;
+		return str;
+	};
 
-    for(; i < nrhtmlmatches; i += 1) {
-      str = str.replace(html_matches[i], bbcode_tpls[i]);
-    }
+	/**
+	 * Turns html into bbcode
+	 */
+	bbcodeParser.htmlToBBCode = function(str) {
+		var i = 0;
 
-    return str;
-  }
+		for(; i < bbcodeParser.html_matches.length; i += 1) {
+			str = str.replace(bbcodeParser.html_matches[i], bbcodeParser.bbcode_tpls[i]);
+		}
 
-  /**
-   * Quote regular expression characters plus an optional character
-   * taken from phpjs.org
-   */
-  function preg_quote (str, delimiter) {
-    return (str + '').replace(new RegExp('[.\\\\+*?\\[\\^\\]$(){}=!<>|:\\' + (delimiter || '') + '-]', 'g'), '\\$&');
-  }
+		return str;
+	}
 
-  // adds BBCodes and their HTML
-  me.addBBCode('[b]{TEXT}[/b]', '<strong>{TEXT}</strong>');
-  me.addBBCode('[i]{TEXT}[/i]', '<em>{TEXT}</em>');
-  me.addBBCode('[u]{TEXT}[/u]', '<span style="text-decoration:underline;">{TEXT}</span>');
-  me.addBBCode('[s]{TEXT}[/s]', '<span style="text-decoration:line-through;">{TEXT}</span>');
-  me.addBBCode('[url={URL}]{TEXT}[/url]', '<a href="{URL}" title="link" target="_blank">{TEXT}</a>');
-  me.addBBCode('[url]{URL}[/url]', '<a href="{URL}" title="link" target="_blank">{URL}</a>');
-  me.addBBCode('[url={LINK}]{TEXT}[/url]', '<a href="{LINK}" title="link" target="_blank">{TEXT}</a>');
-  me.addBBCode('[url]{LINK}[/url]', '<a href="{LINK}" title="link" target="_blank">{LINK}</a>');
-  me.addBBCode('[img={URL} width={NUMBER1} height={NUMBER2}]{TEXT}[/img]', '<img src="{URL}" width="{NUMBER1}" height="{NUMBER2}" alt="{TEXT}" />');
-  me.addBBCode('[img]{URL}[/img]', '<img src="{URL}" alt="{URL}" />');
-  me.addBBCode('[img={LINK} width={NUMBER1} height={NUMBER2}]{TEXT}[/img]', '<img src="{LINK}" width="{NUMBER1}" height="{NUMBER2}" alt="{TEXT}" />');
-  me.addBBCode('[img]{LINK}[/img]', '<img src="{LINK}" alt="{LINK}" />');
-  me.addBBCode('[color=COLOR]{TEXT}[/color]', '<span style="{COLOR}">{TEXT}</span>');
-  me.addBBCode('[highlight={COLOR}]{TEXT}[/highlight]', '<span style="background-color:{COLOR}">{TEXT}</span>');
-  me.addBBCode('[quote="{TEXT1}"]{TEXT2}[/quote]', '<div class="quote"><cite>{TEXT1}</cite><p>{TEXT2}</p></div>');
-  me.addBBCode('[quote]{TEXT}[/quote]', '<cite>{TEXT}</cite>');
-  me.addBBCode('[blockquote]{TEXT}[/blockquote]', '<blockquote>{TEXT}</blockquote>');
-};
-var bbcodeParser = new BBCodeHTML();       // creates object instance of BBCodeHTML()
+	/**
+	 * Quote regular expression characters plus an optional character
+	 * taken from phpjs.org
+	 */
+	function preg_quote (str, delimiter) {
+		// http://kevin.vanzonneveld.net
+		// +   original by: booeyOH
+		// +   improved by: Ates Goral (http://magnetiq.com)
+		// +   improved by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
+		// +   bugfixed by: Onno Marsman
+		// +   improved by: Brett Zamir (http://brett-zamir.me)
+		// *     example 1: preg_quote("$40");
+		// *     returns 1: '\$40'
+		// *     example 2: preg_quote("*RRRING* Hello?");
+		// *     returns 2: '\*RRRING\* Hello\?'
+		// *     example 3: preg_quote("\\.+*?[^]$(){}=!<>|:");
+		// *     returns 3: '\\\.\+\*\?\[\^\]\$\(\)\{\}\=\!\<\>\|\:'
+		return (str + '').replace(new RegExp('[.\\\\+*?\\[\\^\\]$(){}=!<>|:\\' + (delimiter || '') + '-]', 'g'), '\\$&');
+	}
+})();
