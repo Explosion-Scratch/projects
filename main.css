@@ -150,7 +150,7 @@
 	box-shadow: none;
 }
 
-button {
+#button {
 	margin: 10px 0;
 	color: var(--color);
 	background-color: transparent;
@@ -162,7 +162,7 @@ button {
 	font-size: 14px;
 	transition: all 0.2s ease-in-out;
 }
-button:hover {
+#button:hover {
   box-shadow: 1px 1px var(--color-transparent), 2px 2px var(--color-transparent), 3px 3px var(--color-transparent);
   transform: translateX(-3px);
 }
