@@ -151,6 +151,7 @@
 }
 
 button {
+	 margin: 0 10px;
    color: var(--color);
    background-color: transparent;
    border: 1px solid var(--color);
@@ -162,6 +163,6 @@ button {
    transition: all 0.2s ease-in-out;
 }
 button:hover {
-  box-shadow: 1px 1px var(--color-transparent), 2px 2px #53a7ea, 3px 3px #53a7ea;
+  box-shadow: 1px 1px var(--color-transparent), 2px 2px var(--color-transparent), 3px 3px var(--color-transparent);
   transform: translateX(-3px);
 }
