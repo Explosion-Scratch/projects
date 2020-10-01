@@ -25,10 +25,10 @@
 	document.addEventListener("keyup", checkCookie);
 	function checkCookie() {
 		text = document.getElementById('input').value;
-		localStorage.setItem('text_cookie', text)
+		localStorage.setItem('html_cookie', text)
 	}
 	function writeCookie() {
-		cookie = localStorage.getItem('text_cookie');
+		cookie = localStorage.getItem('html_cookie');
 		document.getElementById('input').value = cookie;
 	}
 </script>
