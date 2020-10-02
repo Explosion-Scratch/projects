@@ -5,7 +5,7 @@
 	<title>BBCode parser | JavaScript stuff</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
-<div class='container'>
+<div onload='writeCookie()' class='container'>
 <h1>BBCode parser!</h1>
 <p>Hi there! Welcome to this BBCode parser! Try it out and see the results below!</p>
 <textarea placeholder='Type some text with BBCode here!' style='width: 100%; height: 200px;' onkeyup='go()' id='input'></textarea>
@@ -39,4 +39,17 @@
 			$str = $str.replace($format_search[i], $format_replace[i]);
 		}
 		d1.innerHTML = $str; }
+</script>
+<script>
+	document.addEventListener("keyup", checkCookie);
+
+	function checkCookie() {
+		text = document.getElementById('input').value;
+		localStorage.setItem('bbcode_cookie', text)
+	}
+
+	function writeCookie() {
+		cookie = localStorage.getItem('bbcode_cookie');
+		document.getElementById('input').value = cookie;
+	}
 </script>
