@@ -16,7 +16,11 @@
 </div>
 <div class="se-pre-con"></div>
 <script>
+	document.addEventListener('keyup' validate());
 	window.onload = writeAll();
+	function validate(){
+		if (document.getElementById('password').value === document.getElementById('confirm_password').value)
+	}
 	function writeAll() {
 		writeCookie('name');
 		writeCookie('email');
