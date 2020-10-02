@@ -2,14 +2,15 @@
 	<link rel='stylesheet' href='main.css'>
 	<title>Input Styling | JavaScript stuff</title>
 </head>
-<a id='back' href='index.html'>⇦ Back</a>
-<h1>Input test</h1>
-<p>This is just a test for nice inputs (also, these don't actually do anything. It's just a test lol)</p>
-<form>
-	<input class='input' type='text' id='name' placeholder="Name" onload='writeCookie("name")' onkeyup="checkCookie('name')">
-	<input id='button' type='button' value='Submit'>
-</form>
-
+<div class='container'>
+	<a id='back' href='index.html'>⇦ Back</a>
+	<h1>Input test</h1>
+	<p>This is just a test for nice inputs (also, these don't actually do anything. It's just a test lol)</p>
+	<form>
+		<input class='input' type='text' id='name' placeholder="Name" onload='writeCookie("name")' onkeyup="checkCookie('name')">
+		<input id='button' type='button' value='Submit'>
+	</form>
+</div>
 <div class="se-pre-con"></div>
 <script>
 	function checkCookie(id) {
