@@ -109,6 +109,7 @@
 	margin: 0 auto;
 	display: block;
 	transition: all .8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	width: 100%;
 }
 #input {
 	border-radius: 10px;
@@ -137,7 +138,6 @@
 }
 #input[type=search]:focus {
 	box-shadow: 0 0 0 2px var(--color-transparent), 0 0 0 5px var(--color-transparent);
-	width: 400px;
 	background-color: var(--background);
 	border-color: var(--color);
 }
