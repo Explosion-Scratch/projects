@@ -14,6 +14,7 @@
 				/\[b\](.*?)\[\/b\]/ig,
 				/\[i\](.*?)\[\/i\]/ig,
 				/\[u\](.*?)\[\/u\]/ig
+				/\[quote\](.*?)\[\/quote\]/ig
 		]; // NOTE: No comma after the last entry
 
 		// The matching array of strings to replace matches with
@@ -21,6 +22,7 @@
 				'<strong>$1</strong>',
 				'<em>$1</em>',
 				'<span style="text-decoration: underline;">$1</span>'
+				'<blockquote>$1</blockquote>'
 		];
 
 		// Perform the actual conversion
