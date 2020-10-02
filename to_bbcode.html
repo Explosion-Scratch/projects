@@ -50,7 +50,6 @@
 	}
 
 	function writeCookie() {
-		cookie = localStorage.getItem('bbcode_cookie');
-		document.getElementById('input').value = cookie;
+		document.getElementById('input').value = localStorage.getItem('bbcode_cookie');
 	}
 </script>
