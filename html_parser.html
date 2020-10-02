@@ -1,34 +1,40 @@
 <!DOCTYPE html>
+
 <head>
 	<link rel='stylesheet' href='main.css'>
 	<title>HTML parser | JavaScript stuff</title>
 </head>
-<a id='back' href='index.html'>⇦ Back</a>
-<h1>HTML parser</h1>
-<p>This parses html! Simply type your code in the box below and look at the output! Also, inline styling and inline scripting works too! you can also import external scripts!!!</p>
-<body onload='writeCookie()'>
-    <form id="form1">
-        <div>
-            <textarea onkeyup='go()' id="input" placeholder='Type something in here! Feel free to use HTML tags, they parse!'></textarea>
-            <input id='button' type="button" value="Run!" onclick="go()" />
-            <br />
-            <p id="output">Click the run button or start typing to see the output!</p>
-        </div>
-    </form>
-</body>
+<div class='container'>
+	<a id='back' href='index.html'>⇦ Back</a>
+	<h1>HTML parser</h1>
+	<p>This parses html! Simply type your code in the box below and look at the output! Also, inline styling and inline scripting works too! you can also import external scripts!!!</p>
+
+	<body onload='writeCookie()'>
+		<form id="form1">
+			<div>
+				<textarea onkeyup='go()' id="input" placeholder='Type something in here! Feel free to use HTML tags, they parse!'></textarea>
+				<input id='button' type="button" value="Run!" onclick="go()" />
+				<br />
+				<p id="output">Click the run button or start typing to see the output!</p>
+			</div>
+		</form>
+	</body>
+</div>
 <script>
 	function go() {
-    var c1 = document.getElementById('input').value;
-    var d1 = document.getElementById('output');
-    d1.innerHTML = c1;
-}
+		var c1 = document.getElementById('input').value;
+		var d1 = document.getElementById('output');
+		d1.innerHTML = c1;
+	}
 </script>
 <script>
 	document.addEventListener("keyup", checkCookie);
+
 	function checkCookie() {
 		text = document.getElementById('input').value;
 		localStorage.setItem('html_cookie', text)
 	}
+
 	function writeCookie() {
 		cookie = localStorage.getItem('html_cookie');
 		document.getElementById('input').value = cookie;
@@ -36,13 +42,16 @@
 </script>
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap');
+
 	* {
 		scroll-behavior: smooth;
 	}
+
 	button {
 		padding: 3px;
 		color: black;
 	}
+
 	#output {
 		transition: all 0.5s;
 		border: 2px solid var(--color);
@@ -50,12 +59,14 @@
 		margin: 0;
 		width: 100%;
 	}
+
 	textarea {
 		font-family: 'Anonymous Pro';
 		width: 100%;
 		height: 150px;
 		resize: vertical;
 	}
+
 	* {
 		margin: 0;
 	}
