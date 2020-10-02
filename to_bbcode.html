@@ -16,17 +16,13 @@
 		var c1 = document.getElementById('input').value;
 		var d1 = document.getElementById('output');
 		$str = c1;
-
-		// The array of regex patterns to look for
 		$format_search =  [
 				/\[b\](.*?)\[\/b\]/ig,
 				/\[i\](.*?)\[\/i\]/ig,
 				/\[u\](.*?)\[\/u\]/ig,
 				/\[big\](.*?)\[\/big\]/ig,
 				/\[quote\](.*?)\[\/quote\]/ig
-		]; // NOTE: No comma after the last entry
-
-		// The matching array of strings to replace matches with
+		]; 
 		$format_replace = [
 				'<strong>$1</strong>',
 				'<em>$1</em>',
@@ -34,8 +30,6 @@
 				'<span style="font-size: 30px;">$1</span>',
 				'<blockquote>$1</blockquote>'
 		];
-
-		// Perform the actual conversion
 		for (var i =0;i<$format_search.length;i++) {
 			$str = $str.replace($format_search[i], $format_replace[i]);
 		}
