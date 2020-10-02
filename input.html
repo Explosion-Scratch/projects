@@ -20,7 +20,8 @@
 	window.onload = writeAll();
 	function validate(){
 		if (!(document.getElementById('password').value === document.getElementById('confirm_password').value))
-			document.getElementById('confirm_password').classList.toggle('wrong_password')
+		toggle= document.getElementById('confirm_password');
+		toggle.classList.toggle('wrong_password')
 	}
 	function writeAll() {
 		writeCookie('name');
