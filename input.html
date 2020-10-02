@@ -9,13 +9,14 @@
 	<form>
 		<input class='input' type='text' id='name' placeholder="Name" onfocus="writeCookie('name')" onkeyup="checkCookie('name')">
 		<input class='input' type='email' id='email' placeholder="email" onfocus="writeCookie('email')" onkeyup="checkCookie('email')">
-		<input id='button' type='button' value='Submit'><input id='button' type='button' value='writeCookie()' onclick="writeAll">
+		<input id='button' type='button' value='Submit'><input id='button' type='button' value='writeCookie()' onclick="writeAll()">
 	</form>
 </div>
 <div class="se-pre-con"></div>
 <script>
 	function writeAll() {
-		writeCookie('name')
+		writeCookie('name');
+		writeCookie('email');
 	}
 	function checkCookie(id) {
 		text = document.getElementById(id).value;
