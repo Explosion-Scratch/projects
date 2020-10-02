@@ -18,8 +18,9 @@
 		localStorage.setItem(id, text);
 	}
 	function writeCookie(id) {
-		cookie = localStorage.getItem(id).value;
+		cookie = localStorage.getItem(id);
 		document.getElementById(id).value = cookie;
+		return cookie;
 	}
 </script>
 <style>
