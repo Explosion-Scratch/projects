@@ -6,18 +6,18 @@
 <h1>Input test</h1>
 <p>This is just a test for nice inputs (also, these don't actually do anything. It's just a test lol)</p>
 <form>
-	<input class='input' type='text' id='name' placeholder="Name" onload='writeCookie("name")' onkeypress="checkCookie('name')">
+	<input class='input' type='text' id='name' placeholder="Name" onload='writeCookie("name", "name")' onkeypress="checkCookie('name')">
 	<input id='button' type='button' value='Submit'>
 </form>
 
 <div class="se-pre-con"></div>
 <script>
-	function checkCookie(value, id) {
+	function checkCookie(id) {
 		text = document.getElementById(id);.value;
-		localStorage.setItem(value, text)
+		localStorage.setItem(id, text)
 	}
-	function writeCookie(value) {
-		cookie = localStorage.getItem(value);
+	function writeCookie(id) {
+		cookie = localStorage.getItem(id);
 		document.getElementsByName(id);.value = cookie;
 	}
 </script>
