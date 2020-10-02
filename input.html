@@ -9,8 +9,8 @@
 	<form onfocus='writeAll()'>
 		<input class='input' type='text' id='name' placeholder="Name" onkeyup="checkCookie('name')">
 		<input class='input' type='email' id='email' placeholder="Email" onkeyup="checkCookie('email')">
-		<input class='input' type='password' id='password' placeholder="Password" onkeyup="checkCookie('password')">
-		<input class='input' type='password' id='comfirm_password' placeholder="Confirm password" onkeyup="checkCookie('confirm_password')">
+		<input class='input' type='password' id='password' placeholder="Password" >
+		<input class='input' type='password' id='comfirm_password' placeholder="Confirm password">
 		<input id='button' type='submit' value='Submit'>
 	</form>
 </div>
@@ -20,8 +20,6 @@
 	function writeAll() {
 		writeCookie('name');
 		writeCookie('email');
-		writeCookie('password');
-		writeCookie('confirm_password');
 	}
 	function checkCookie(id) {
 		text = document.getElementById(id).value;
