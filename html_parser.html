@@ -51,9 +51,8 @@
 		var d1 = document.getElementById('output');
 		d1.innerHTML = c1;
 	}
-</script>
-<script>
-	$str = 'this is a [b]bolded[/b], [i]italic[/i] and [u]underlined[/u] string';
+function to_bbcode(str) {
+	$str = str;
 
 	// The array of regex patterns to look for
 	$format_search =  [
@@ -73,8 +72,8 @@
 	for (var i =0;i<$format_search.length;i++) {
 		$str = $str.replace($format_search[i], $format_replace[i]);
 	}
-	document.getElementById('output').innerHTML=$str;
-
+	return str
+}
 </script>
 <script>
 	document.addEventListener("keyup", checkCookie);
