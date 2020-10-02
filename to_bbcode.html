@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<head>
+	<link rel='stylesheet' href='main.css'>
+	<title>BBCode parser | JavaScript stuff</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<a id='back' href='index.html'>⇦ Back</a>
+<div class='container'>
+<h1>BBCode parser!</h1>
+<p>Hi there! Welcome to this BBCode parser! Try it out and see the results below!</p>
+<textarea style='width: 100%; height: 200px;' onkeyup='go()' id='input'></textarea>
+<div style='border: 2px solid var(--color); border-radius: 10px; width: 95%;' id='output'><p>You will see the output of the stuff you type in the box above here!</p></div></div>
+<script>
+	function go() {
+		var c1 = document.getElementById('input').value;
+		var d1 = document.getElementById('output');
+		$str = c1;
+		$format_search =  [
+				/\[b\](.*?)\[\/b\]/ig,
+				/\[i\](.*?)\[\/i\]/ig,
+				/\[u\](.*?)\[\/u\]/ig,
+				/\[big\](.*?)\[\/big\]/ig,
+				/\[quote\](.*?)\[\/quote\]/ig
+		]; 
+		$format_replace = [
+				'<strong>$1</strong>',
+				'<em>$1</em>',
+				'<span style="text-decoration: underline;">$1</span>',
+				'<span style="font-size: 30px;">$1</span>',
+				'<blockquote>$1</blockquote>'
+		];
+		for (var i =0;i<$format_search.length;i++) {
+			$str = $str.replace($format_search[i], $format_replace[i]);
+		}
+		d1.innerHTML = $str; }
+</script>
+<script>
+	document.addEventListener("keyup", checkCookie);
+
+	function checkCookie() {
+		text = document.getElementById('input').value;
+		localStorage.setItem('bbcode_cookie', text)
+	}
+
+	function writeCookie() {
+		document.getElementById('input').value = localStorage.getItem('bbcode_cookie');
+	}
+</script>
