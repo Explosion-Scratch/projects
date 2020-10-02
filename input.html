@@ -15,8 +15,9 @@
 <div class="se-pre-con"></div>
 <script>
 	setInterval(function() {
+		if (document.activeElement)
 			writeAll();
-		}, 1000);
+		}, 1);
 	function writeAll() {
 		writeCookie('name');
 		writeCookie('email');
