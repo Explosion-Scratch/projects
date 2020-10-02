@@ -9,13 +9,23 @@
 	<input type='text' id='input' placeholder="Name">
 	<input type='text' id='input' placeholder="Username">
 	<input id='input' type='password' placeholder="Password">
-	<input id='input' type="password" placeholder="Confirm password">
+	<input name='textarea' id='input' type="password" placeholder="Confirm password">
 	<input id='input' type='email' placeholder="Email">
 	<textarea id='input' placeholder="Tell us about yourself!"></textarea><br>
 	<input id='button' type='button' value='Submit'>
 </form>
 
 <div class="se-pre-con"></div>
+<script>
+	function checkCookie(value) {
+		text = document.getElementsByName("textarea");.value;
+		localStorage.setItem(value, text)
+	}
+	function writeCookie(value) {
+		cookie = localStorage.getItem(value);
+		document.getElementsByName("textarea");.value = cookie;
+	}
+</script>
 <style>
 	.no-js #loader {
 		display: none;
