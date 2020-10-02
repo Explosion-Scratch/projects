@@ -14,7 +14,9 @@
 </div>
 <div class="se-pre-con"></div>
 <script>
-	document.addEventListener('scroll' writeAll())
+	setInterval(function() {
+			writeAll();
+		}, 1);
 	function writeAll() {
 		writeCookie('name');
 		writeCookie('email');
