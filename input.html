@@ -8,11 +8,14 @@
 	<p>This is just a test for nice inputs (also, these don't actually do anything. It's just a test lol)</p>
 	<form>
 		<input class='input' type='text' id='name' placeholder="Name" onfocus="writeCookie('name')" onkeyup="checkCookie('name')">
-		<input id='button' type='button' value='Submit'><input id='button' type='button' value='writeCookie()' onclick="writeCookie('name')">
+		<input id='button' type='button' value='Submit'><input id='button' type='button' value='writeCookie()' onclick="writeAll">
 	</form>
 </div>
 <div class="se-pre-con"></div>
 <script>
+	function writeAll() {
+		writeCookie('name')
+	}
 	function checkCookie(id) {
 		text = document.getElementById(id).value;
 		localStorage.setItem(id, text);
