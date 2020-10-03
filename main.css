@@ -186,9 +186,7 @@
  background: none;
 }
 blockquote {
-	background: var(--color-transparent);
-	padding: 20px;
-	border-left: 10px solid var(--color);
-	border-radius: 0 10px 10px 0;
-	color: var(--background);
+	background: rgba(255, 255, 255, 0.144);
+	border: 0.5px solid grey;
+	color: black;
 }
