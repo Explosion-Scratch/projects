@@ -23,7 +23,8 @@
 				/\[big\](.*?)\[\/big\]/ig,
 				/\[quote\](.*?)\[\/quote\]/ig,
 				/\[small\](.*?)\[\/small\]/ig,
-				/\[center\](.*?)\[\/center\]/ig
+				/\[center\](.*?)\[\/center\]/ig,
+				/\[code\](.*?)\[\/code\]/ig
 		]; 
 		$format_replace = [
 				'<strong>$1</strong>',
@@ -32,7 +33,8 @@
 				'<span style="font-size: 30px;">$1</span>',
 				'<blockquote>$1</blockquote>',
 				'<span style="font-size: 8px;">$1</span>',
-				'<center>$1</center>'
+				'<center>$1</center>',
+				'<span style="color: white; font-family: monospace; display: inline-block; border: 0.5px solid var(--color); border-radius: 5px; padding: 3px; background-color: var(--color-transparent);">$1</span>'
 		];
 		for (var i =0;i<$format_search.length;i++) {
 			$str = $str.replace($format_search[i], $format_replace[i]);
