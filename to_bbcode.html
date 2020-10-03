@@ -41,15 +41,3 @@
 		}
 		d1.innerHTML = $str; }
 </script>
-<script>
-	document.addEventListener("keyup", checkCookie);
-
-	function checkCookie() {
-		text = document.getElementById('input').value;
-		localStorage.setItem('bbcode_cookie', text)
-	}
-
-	function writeCookie() {
-		document.getElementById('input').value = localStorage.getItem('bbcode_cookie');
-	}
-</script>
