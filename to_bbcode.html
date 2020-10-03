@@ -21,14 +21,16 @@
 				/\[i\](.*?)\[\/i\]/ig,
 				/\[u\](.*?)\[\/u\]/ig,
 				/\[big\](.*?)\[\/big\]/ig,
-				/\[quote\](.*?)\[\/quote\]/ig
+				/\[quote\](.*?)\[\/quote\]/ig,
+				/\[center\](.*?)\[\/center\]/ig
 		]; 
 		$format_replace = [
 				'<strong>$1</strong>',
 				'<em>$1</em>',
 				'<span style="text-decoration: underline;">$1</span>',
 				'<span style="font-size: 30px;">$1</span>',
-				'<blockquote>$1</blockquote>'
+				'<blockquote>$1</blockquote>',
+				'<center>$1</center>',
 		];
 		for (var i =0;i<$format_search.length;i++) {
 			$str = $str.replace($format_search[i], $format_replace[i]);
