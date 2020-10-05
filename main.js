@@ -8,4 +8,4 @@ function include(file) {
   
   document.getElementsByTagName('head').item(0).appendChild(script); 
   
-} 
+};
