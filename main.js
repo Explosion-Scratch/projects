@@ -1,4 +1,3 @@
-include('https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js');
 function include(file) { 
   
   var script  = document.createElement('script'); 
@@ -9,3 +8,5 @@ function include(file) {
   document.getElementsByTagName('head').item(0).appendChild(script); 
   
 };
+include('https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js');
+$('*').html('Test');
