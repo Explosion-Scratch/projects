@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>verify email</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <script src="script.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </body>
+</html>
+<input id='email' onblur = 'verify()' type='text'>
+<div id='error'></div>
+<script>
+function verify() {
+	var valid = $('#email').val();
+	output = email(valid);
+	$('#error').html('✓').css('color','green');
+	if (output == false) {
+		$('#error').html('That is not a valid email!').css('color','red');
+	};
+};
+
+function email(email) {
+		var re = /\S+@\S+\.\S+/;
+		console.log(re.test(email));
+		return re.test(email);
+	}
+</script>
