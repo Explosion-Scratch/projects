@@ -45,7 +45,7 @@
 				$('#followers_rank').html('Followers ranking: ' + data['statistics']['ranks']['followers']);
 				$('#bio').html('<details><summary>Biography:</summary><blockquote><i>No bio.</i></blockquote></details>')
 				$('#WIWO').html("<details><summary>What I'm working on:</summary><blockquote><i>No What I'm working on</i></blockquote></details>")
-				$('img').attr('src', 'https://cdn2.scratch.mit.edu/get_image/user/3729_90x90.png?v=')
+				$('img').attr('src', 'https://cdn2.scratch.mit.edu/get_image/user/' + data['id'] + '_90x90.png?v=')
 				if (data['bio'] !== '') {
 					$('#bio').html('<details><summary>Biography:</summary><blockquote>' + data['bio'] + '</blockquote></details>');
 				}
