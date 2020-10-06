@@ -31,8 +31,8 @@
 	</div>
 </div>
 <script>
+	$('.card').hide();
 	function go() {
-		$('*').slideDown();
 		$('#followers').html('Loading...');
 		user = $('input').val();
 		url = 'https://scratchdb.lefty.one/v2/user/info/' + user ;
@@ -58,6 +58,7 @@
 			function(messages) {
 				$('#messages').html('Messages: ' + messages['count']);
 		});
+		$('.card').show(1000);
 	}
 </script>
 <style>
