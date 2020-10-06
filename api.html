@@ -31,12 +31,6 @@
 	</div>
 </div>
 <script>
-	page = window.location.href
-	const url = new URL(page);
-	var hash = url.hash;
-	if (hash = ''){
-		go();
-	}
 	function go() {
 		$('#followers').html('Loading...');
 		user = $('input').val();
