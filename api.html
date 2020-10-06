@@ -31,6 +31,9 @@
 	</div>
 </div>
 <script>
+	if (window.location.href != ''){
+		go();
+	}
 	function go() {
 		$('#followers').html('Loading...');
 		user = $('input').val();
