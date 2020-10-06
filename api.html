@@ -31,6 +31,9 @@
 	</div>
 </div>
 <script>
+	page = window.location.href
+	const url = new URL(page);
+	var hash = url.hash
 	if (window.location.href != ''){
 		go();
 	}
