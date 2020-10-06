@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>verify email</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="main.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
     <script src="script.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </body>
 </html>
-<input id='email' onblur = 'verify()' type='text'>
+<input class='email' id='input' placeholder='email' onblur = 'verify()' type='text'>
 <div id='error'></div>
 <script>
 function verify() {
-	var valid = $('#email').val();
+	var valid = $('.email').val();
 	output = email(valid);
-	$('#error').html('✓').css('color','green');
+	$('#error').html('').css('color','var(--color)');
 	if (output == false) {
 		$('#error').html('That is not a valid email!').css('color','red');
 	};
