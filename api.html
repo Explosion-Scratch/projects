@@ -32,6 +32,7 @@
 </div>
 <script>
 	function go() {
+		$('*').slideDown();
 		$('#followers').html('Loading...');
 		user = $('input').val();
 		url = 'https://scratchdb.lefty.one/v2/user/info/' + user ;
