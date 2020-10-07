@@ -1,6 +1,6 @@
 # Welcome!
 
-Hi there! This is the part of [my website](https://explosion-scratch.github.io/https://explosion-scratch.github.io) with all of my JavaScript projects! Some of them are listed below:
+Hi there! This is the part of [my website](https://explosion-scratch.github.io) with all of my JavaScript projects! Some of them are listed below:
 
 *   [Scratch API](https://explosion-scratch.github.io/api.html)  
     This was something I made to try out jQuery. It gets the data of a specified user from Lefty's API.
