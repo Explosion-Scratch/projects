@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width">
     <title>Find and replace</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
-		<link rel='stylesheet' href='main.css'>
+		<link rel='stylesheet' href='vars.css'>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body>
@@ -59,11 +59,11 @@
 }
 textarea:focus, input:focus {
 	background: #141414;
-	border: 1px solid #11f1f1c9;
+	border: 1px solid var(--color);
 }
 textarea, input {
 	transition-duration: 0.5s;
-	border: 1px solid #11f1f1c9;
+	border: 1px solid var(--color);
 	border-radius: 3px;
 	outline: none;
 }
@@ -94,13 +94,13 @@ button {
 	transition-duration: 0.5s;
 	background: #101010;
 	color: white;
-	border: 1px solid #11f1f1c9;
+	border: 1px solid var(--color);
 	border-radius: 5px;
 }
 button:hover {
-	background: #11f1f1c9;
+	background: var(--color);
 	color: black;
-	border: 1px solid #11f1f1c9;
+	border: 1px solid var(--color);
 	border-radius: 5px;
 }
 
