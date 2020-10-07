@@ -7,12 +7,14 @@
     <link href="main.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
+		<a id='back' href='index.html'>⇦ Back</a>
+		<div class='container'>
+			<input class='email' id='input' placeholder='email' onblur = 'verify()' type='text'>
+		</div>
     <script src="script.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </body>
 </html>
-<a id='back' href='index.html'>⇦ Back</a>
-<input class='email' id='input' placeholder='email' onblur = 'verify()' type='text'>
 <script>
 function verify() {
 	var valid = $('.email').val();
