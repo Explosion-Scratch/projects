@@ -21,13 +21,19 @@
 function verify() {
 	var valid = $('.email').val();
 	output = email(valid);
-	
 	if (output == false) {
 		$('#input').css({"border-color": "red", 
 				"border-width":"1px", 
 				"border-style":"solid",
 				"box-shadow":"none"
 				});
+	if (output) {
+		$('#input').css({"border-color": "var(--color)", 
+				"border-width":"1px", 
+				"border-style":"solid",
+				"box-shadow":"none"
+		});
+	}
 	};
 };
 
