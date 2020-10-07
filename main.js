@@ -7,3 +7,4 @@ function insertHR(element) {
 document.onload = insertHR('h1');
 document.onload = insertHR('h2');
 document.onload = insertHR('h1');
+document.onload = alert('hi');
