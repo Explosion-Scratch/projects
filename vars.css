@@ -39,3 +39,6 @@
 	border-radius: 5000px;
 	box-shadow: 0 0 5px 5px var(--color);
 }
+::-webkit-scrollbar-thumb:hover {
+	background: linear-gradient(var(--secondary-color), var(--color));
+}
