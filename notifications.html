@@ -21,7 +21,7 @@
         if (Notification.permission === 'granted') {
             // show notification here
             var notify = new Notification('Hi there!', {
-                body: document.getElementById('input').value(),
+                body: document.getElementById('input').value,
                 icon: 'favicon.ico',
             });
         } else {
@@ -30,7 +30,7 @@
                 if (p === 'granted') {
                     // show notification here
                     var notify = new Notification('Hi there!', {
-                        body: document.getElementById('input').value(),
+                        body: document.getElementById('input').value,
                 				icon: 'favicon.ico',
                     });
                 } else {
