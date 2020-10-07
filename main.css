@@ -199,4 +199,5 @@ blockquote {
 }
 ::-webkit-scrollbar-thumb {
   background: var(--color);
+	border-radius: 5000px;
 }
