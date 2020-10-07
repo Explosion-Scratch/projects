@@ -15,13 +15,13 @@
 <script>
 	function notifyMe() {
     if (!window.Notification) {
-        console.log('Browser does not support notifications.');
+        alert('Sorry! Your browser does not support notifications.');
     } else {
         // check if permission is already granted
         if (Notification.permission === 'granted') {
             // show notification here
             var notify = new Notification('Hi there!', {
-                body: 'How are you doing?',
+                body: ,
                 icon: 'https://bit.ly/2DYqRrh',
             });
         } else {
