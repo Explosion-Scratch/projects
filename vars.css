@@ -1,8 +1,8 @@
 * {
-		--color: #66ff99;
-		--color-transparent: rgba(102, 255, 153, 0.61);
+		--color: #66ffff;
+		--color-transparent: rgba(102, 255, 255, 0.479);
 		--font-size: 45%;
-		--secondary-color: #38f8b8;
+		--secondary-color: #38bbf8;
 		--text: white;
 		--background: #101010;
 		--shadow: rgba(0,0,0,.35);
