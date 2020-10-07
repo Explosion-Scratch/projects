@@ -27,3 +27,15 @@
  opacity: 1;
  background: none;
 }
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #101010;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color);
+	border-radius: 5000px;
+	box-shadow: 0 0 5px 5px #66ffff;
+}

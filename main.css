@@ -191,13 +191,3 @@ blockquote {
 	border: 0.5px solid grey;
 	color: white;
 }
-::-webkit-scrollbar {
-  width: 5px;
-}
-::-webkit-scrollbar-track {
-  background: #101010;
-}
-::-webkit-scrollbar-thumb {
-  background: var(--color);
-	border-radius: 5000px;
-}
