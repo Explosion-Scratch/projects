@@ -13,7 +13,6 @@
 </html>
 <a id='back' href='index.html'>⇦ Back</a>
 <input class='email' id='input' placeholder='email' onblur = 'verify()' type='text'>
-<div id='error'></div>
 <script>
 function verify() {
 	var valid = $('.email').val();
@@ -25,7 +24,7 @@ function verify() {
 };
 
 function email(email) {
-		var re = /\S+@\S+\.\S+/;
+		var re = /\S+@\S+/;
 		console.log(re.test(email));
 		return re.test(email);
 	}
