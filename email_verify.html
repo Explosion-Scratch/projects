@@ -20,7 +20,7 @@
 <script>
 function verify() {
 	var valid = $('#input').val();
-	output = email(valid);
+	output = email($('#input').val());
 	if (output == false) {
 		$('#input').css({"border-color": "red", 
 				"border-width":"1px", 
