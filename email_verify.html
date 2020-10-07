@@ -13,14 +13,13 @@
 </html>
 <a id='back' href='index.html'>⇦ Back</a>
 <input class='email' id='input' placeholder='email' onblur = 'verify()' type='text'>
-<div id='error'></div>
 <script>
 function verify() {
 	var valid = $('.email').val();
 	output = email(valid);
 	$('#error').html('').css('color','var(--color)');
 	if (output == false) {
-		$('#error').html('That is not a valid email!').css('color','red');
+		$('.input').css('border','1px solid red');
 	};
 };
 
