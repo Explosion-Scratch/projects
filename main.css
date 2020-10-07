@@ -191,3 +191,9 @@ blockquote {
 	border: 0.5px solid grey;
 	color: white;
 }
+hr {
+	height: 1px; 
+	background: linear-gradient(to right, transparent , var(--color), transparent); 
+	padding: 0px; 
+	border: none;
+}
