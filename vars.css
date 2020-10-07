@@ -37,5 +37,5 @@
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(var(--color), var(--secondary-color));
 	border-radius: 5000px;
-	box-shadow: 0 0 5px 5px linear-gradient(var(--color), var(--secondary-color));
+	box-shadow: 0 0 5px 5px var(--color);
 }
