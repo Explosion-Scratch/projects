@@ -67,8 +67,11 @@ body{
   max-width: 400px;
   margin: auto;
 	box-shadow: 0 0 5px 0 var(--color);
+	transition: box-shadow 0.5s ease;
 }
-
+.content:hover {
+	box-shadow: 0 0 15px 0 var(--color);
+}
 .content .image-overlay {
   background: rgba(0,0,0,0.7);
   position: absolute;
