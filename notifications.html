@@ -21,7 +21,7 @@
         if (Notification.permission === 'granted') {
             // show notification here
             var notify = new Notification('Hi there!', {
-                body: ,
+                body: document.getElementById('input').value(),
                 icon: 'https://bit.ly/2DYqRrh',
             });
         } else {
