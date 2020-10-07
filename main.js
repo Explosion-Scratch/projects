@@ -4,6 +4,6 @@ function insertHR(element) {
 				articles[i].parentNode.insertBefore(document.createElement('hr'), articles[i].nextSibling);
 		};
 };
-window.onload = insertHR('h1');
-window.onload = insertHR('h2');
-window.onload = insertHR('h1');
+document.onload = insertHR('h1');
+document.onload = insertHR('h2');
+document.onload = insertHR('h1');
