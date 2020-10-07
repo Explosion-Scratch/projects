@@ -20,7 +20,7 @@ function verify() {
 	output = email(valid);
 	$('#error').html('').css('color','var(--color)');
 	if (output == false) {
-		$('#error').html('That is not a valid email!').css('color','red').css('text-shadow', '0 0 0 10px red');
+		$('#error').html('That is not a valid email!').css('color','red');
 	};
 };
 
