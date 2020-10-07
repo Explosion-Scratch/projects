@@ -18,11 +18,13 @@
 function verify() {
 	var valid = $('.email').val();
 	output = email(valid);
-	$('#error').html('').css('color','var(--color)');
 	if (output == false) {
-		$('#error').html('That is not a valid email!').css('color','red');
+		$('#input').css({"border-color": "red", 
+             "border-weight":"1px", 
+             "border-style":"solid"});
 	};
 };
+
 
 function email(email) {
 		var re = /\S+@\S+\.\S+/;
