@@ -8,9 +8,9 @@
 	<h1>Input test</h1>
 	<p>This is just a test for nice inputs (also, these don't actually do anything. It's just a test lol)</p>
 	<form onfocus='writeAll()'>
-		<input class='input' type='text' id='name' placeholder="Name" onkeyup="checkCookie('name')">
-		<input class='input' type='email' id='email' placeholder="Email" onkeyup="checkCookie('email')">
-		<input class='input' type='password' id='password' placeholder="Password" >
+		<input class='input' type='text' id='name' placeholder="Name">
+		<input class='input' type='email' id='email' placeholder="Email" >
+		<input class='input' type='password' id='password' placeholder="Password">
 		<input class='input' type='password' id='confirm_password' placeholder="Confirm password">
 		<input id='button' type='submit' value='Submit'>
 	</form>
@@ -19,7 +19,10 @@
 <script>
 	document.addEventListener('keyup' validate());
 	window.onload = writeAll();
-	
+	function setCookies() {
+		checkCookie('name');
+		checkCookie('email');
+	}
 	function writeAll() {
 		writeCookie('name');
 		writeCookie('email');
