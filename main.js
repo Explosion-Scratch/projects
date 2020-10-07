@@ -4,4 +4,4 @@ function insertHR(element) {
 				articles[i].parentNode.insertBefore(document.createElement('hr'), articles[i].nextSibling)
 		}
 }
-window.onload = insertHR
+window.onload = insertHR('h1')
