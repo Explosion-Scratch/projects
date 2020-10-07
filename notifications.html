@@ -30,14 +30,14 @@
                 if (p === 'granted') {
                     // show notification here
                     var notify = new Notification('Hi there!', {
-                        body: 'How are you doing?',
-                        icon: 'https://bit.ly/2DYqRrh',
+                        body: document.getElementById('input').value(),
+                icon: 'https://bit.ly/2DYqRrh',
                     });
                 } else {
                     alert('You blocked notifications! >:(');
                 }
             }).catch(function (err) {
-                console.error(err);
+               alert('Hmm, there was an error! Error:' + err);
             });
         }
     }
