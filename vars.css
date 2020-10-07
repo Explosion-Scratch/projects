@@ -10,3 +10,20 @@
 		--input-border-radius: 5px;
 		--input-width: 200px;
 	}
+
+/* I'm just putting this here so that pages like find_and_replace.html also get this styling, as they don't use main.css */
+#back {
+ position: absolute; 
+ text-decoration: none; 
+ top: 2px;
+ left: 10px;
+ color: var(--color);
+ border-radius: 2px;
+ opacity: .8;
+ border-bottom: none;
+}
+#back:hover {
+ color: var(--secondary-color);
+ opacity: 1;
+ background: none;
+}
