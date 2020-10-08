@@ -1,52 +1,60 @@
-
 <head>
-	<link rel='stylesheet' href='main.css'>
+  <link rel="stylesheet" href="main.css" />
 </head>
 <html>
-	<body>
-		<div class='container'>
-			<h1>Notifications</h1>
-			<p>Type something in the box below and click notify!</p>
-			<input id='input' type='text' placeholder="What text do you want to notify?">
-			<button onclick='notifyMe()' id='button'>Notify me!</button>
-		</div>
-	</body>
+  <body>
+    <div class="container">
+      <h1>Notifications</h1>
+      <p>Type something in the box below and click notify!</p>
+      <input
+        id="input"
+        type="text"
+        placeholder="What text do you want to notify?"
+      />
+      <button onclick="notifyMe()" id="button">Notify me!</button>
+    </div>
+  </body>
 </html>
 <script>
-	function notifyMe() {
+  function notifyMe() {
     if (!window.Notification) {
-        alert('Sorry! Your browser does not support notifications.');
+      alert("Sorry! Your browser does not support notifications.");
     } else {
-        // check if permission is already granted
-        if (Notification.permission === 'granted') {
-            // show notification here
-            var notify = new Notification('Hi there!', {
-                body: document.getElementById('input').value,
-                icon: 'favicon.ico',
-            });
-        } else {
-            // request permission from user
-            Notification.requestPermission().then(function (p) {
-                if (p === 'granted') {
-                    // show notification here
-                    var notify = new Notification('Hi there!', {
-                        body: document.getElementById('input').value,
-                				icon: 'favicon.ico',
-                    });
-                } else {
-                    alert('You blocked notifications! >:(');
-                }
-            }).catch(function (err) {
-               alert('Hmm, there was an error! Error:' + err);
-            });
-        }
+      // check if permission is already granted
+      if (Notification.permission === "granted") {
+        // show notification here
+        var notify = new Notification("Hi there!", {
+          body: document.getElementById("input").value,
+          icon: "favicon.ico",
+        });
+      } else {
+        // request permission from user
+        Notification.requestPermission()
+          .then(function (p) {
+            if (p === "granted") {
+              // show notification here
+              var notify = new Notification("Hi there!", {
+                body: document.getElementById("input").value,
+                icon: "favicon.ico",
+              });
+            } else {
+              alert("You blocked notifications! >:(");
+            }
+          })
+          .catch(function (err) {
+            alert("Hmm, there was an error! Error:" + err);
+          });
+      }
     }
-}
+  }
 </script>
 <head>
-	<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <script>
-	$('h1, h2, h3').css('text-align', 'center').append('<hr style="height: 1px; background: linear-gradient(to right, transparent , var(--color), transparent); padding: 0px; border: none;">');
-
+  $("h1, h2, h3")
+    .css("text-align", "center")
+    .append(
+      '<hr style="height: 1px; background: linear-gradient(to right, transparent , var(--color), transparent); padding: 0px; border: none;">'
+    );
 </script>
