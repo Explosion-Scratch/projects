@@ -77,12 +77,10 @@
 </script>
 <script>
 	//Hackzor stuffz
-	$(document).ready(function() {
-		$(window).bind('keypress', function(e) {
-			if (e == 69) {
-				place = prompt('Where to?');
-				window.location.assign('http://js-stuff.cf/' + prompt + '.html');
-			}
-		});
-	});
+	function detectkey(event) {
+    var unicode = event.which || event.keyCode;
+    if (String.fromCharCode(unicode) == 'e') {
+			window.location.href='https://explosion.cf';
+		}
+}
 </script>
