@@ -86,7 +86,6 @@
 	}
 
 	h1 {
-		font-family: 'Quicksand';
 		font-weight: 200;
 		color: var(--color);
 		font-size: calc(var(--font-size)*6);
