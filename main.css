@@ -213,4 +213,5 @@ hr {
 }
 .beta *, .beta{
 	color: var(--color-transparent);
+	cursor: not-allowed;
 }
