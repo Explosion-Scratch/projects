@@ -1,2 +1,4 @@
 var beta = document.getElementsByClassName('beta')
-beta.onclick(preventDefault());
+beta.addEventListener("click", function(event){
+  event.preventDefault()
+});
