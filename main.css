@@ -211,6 +211,6 @@ hr {
   padding: 0px;
   border: none;
 }
-.beta {
-	color: var(--color-transparent) !important;
+.beta *{
+	color: var(--color-transparent);
 }
