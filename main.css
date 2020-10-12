@@ -212,5 +212,5 @@ hr {
   border: none;
 }
 .beta {
-	color: var(--color-transparent);
+	color: var(--color-transparent) !important;
 }
