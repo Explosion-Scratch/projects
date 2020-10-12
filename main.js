@@ -1,1 +1,1 @@
-document.getElementsByClassName('a')
+document.getElementsByClassName('beta')
