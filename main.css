@@ -168,7 +168,7 @@ h1 {
   box-shadow: none;
 }
 
-#button, .button-2 {
+#button, .click {
   margin: 10px 5px;
   color: var(--color);
   background-color: transparent;
@@ -180,7 +180,7 @@ h1 {
   font-size: 14px;
   transition: all 0.2s ease-in-out;
 }
-#button:hover, .button-2:hover {
+#button:hover, .click:hover {
   box-shadow: 1px 1px var(--color-transparent), 2px 2px var(--color-transparent),
     3px 3px var(--color-transparent);
   transform: translateX(-3px);
