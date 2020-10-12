@@ -178,10 +178,7 @@ h1 {
   font-size: 14px;
   transition: all 0.2s ease-in-out;
 }
-input[type=
-"number"] {
-	  margin: 10px 5px !important;
-}
+
 #button:hover, .click:hover:not(input), input[type="number"]:focus {
   box-shadow: 1px 1px var(--color-transparent), 2px 2px var(--color-transparent),
     3px 3px var(--color-transparent);
