@@ -1,1 +1,1 @@
-document.getElementByTag('a')
+document.getElementsByTagName('a')
