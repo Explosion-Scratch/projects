@@ -105,6 +105,12 @@ document.getElementById('zoom_in')
 		myState.zoom += 0.5;
 		render();
 	});
+document.getElementById('zoom_out')
+        .addEventListener('click', (e) => {
+            if(myState.pdf == null) return;
+            myState.zoom -= 0.5;
+            render();
+        });
 </script>
 <style>
     #canvas_container {
