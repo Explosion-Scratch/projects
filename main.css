@@ -166,7 +166,7 @@ h1 {
   box-shadow: none;
 }
 
-#button, .click {
+#button, .click:not(input) {
   margin: 10px 5px;
   color: var(--color);
   background-color: transparent;
