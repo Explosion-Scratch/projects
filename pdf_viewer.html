@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>PDF Viewer</title>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.0.943/pdf.min.js">
-</script>
+	</script>
 </head>
 
 <body>
@@ -29,15 +29,14 @@
 
 </html>
 <script>
-    var myState = {
-        pdf: null,
-        currentPage: 1,
-        zoom: 1
-    }
- 
-    pdfjsLib.getDocument('./my_document.pdf').then((pdf) => {
- 
-    // more code here
- 
-});
+	var myState = {
+		pdf: null,
+		currentPage: 1,
+		zoom: 1
+	}
+
+	pdfjsLib.getDocument('./my_document.pdf').then((pdf) => {
+
+		myState.pdf = pdf;
+	});
 </script>
