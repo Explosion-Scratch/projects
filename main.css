@@ -112,8 +112,6 @@ h1 {
   background: var(--background);
   outline: none;
   border: none;
-  margin: 0 auto;
-  display: block;
   transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   width: 100%;
 }
