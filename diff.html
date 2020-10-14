@@ -30,7 +30,7 @@ function compare(original, newhtml) {
 };
 function go() {
 	let originalHTML = escapeHtml(document.getElementById('old').value);
-	let newHTML = document.getElementById('new').value;
+	let newHTML = escapeHtml(document.getElementById('new').value);
 	document.getElementById('output').innerHTML = compare(originalHTML, newHTML)
 }
 </script>
