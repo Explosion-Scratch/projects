@@ -7,9 +7,10 @@
     <link href="main.css" rel="stylesheet" type="text/css" />
   </head>
   <body onkeyup="go()">
+		
 		<center><h1>Javascript Diffrence Utility<hr></h1>
 		<p><i>This takes your old text and compares it with the new text!</i><hr>
-		<textarea id='old'></textarea><textarea id='new'></textarea>
+		<textarea class='input' id='old'></textarea><textarea id='new' class='input'></textarea>
 		<div id='output'></div>
     <script src="main.js"></script>
   </body>
@@ -404,5 +405,8 @@ ins {
 del {
     text-decoration: line-through;
     background-color: #ff002b3a;
+}
+* {
+	padding: 0px;
 }
 </style>
