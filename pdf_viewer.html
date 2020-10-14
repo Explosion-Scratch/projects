@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
 	<link rel='stylesheet' href='main.css'>
 	<meta charset="utf-8">
@@ -12,51 +13,57 @@
 
 <body>
 	<div class='container'>
-		<center><h1>PDF viewer<hr></h1></center><p>This is a PDF viewer that I made! Maybe in the future you'll be able to upload your own files!</p>
-	<div class='pdf-viewer'>
-		<div id="my_pdf_viewer">
-			<div id="canvas_container">
-				<canvas id="pdf_renderer"></canvas>
+		<center>
+			<h1>PDF viewer
+				<hr>
+			</h1>
+		</center>
+		<p>This is a PDF viewer that I made! Maybe in the future you'll be able to upload your own files!</p>
+		<div class='pdf-viewer'>
+			<div id="my_pdf_viewer">
+				<div id="canvas_container">
+					<canvas id="pdf_renderer"></canvas>
+				</div>
+			</div><br>
+			<div id="controls">
+				<button class='click' id="go_previous">Previous</button>
+				<button class='click' id="go_next">Next</button>
+				<button class='click' id="zoom_in">+</button>
+				<button class='click' id="zoom_out">-</button>
+				<input class='click' id="current_page" value="1" type="number" />
 			</div>
-		</div><br>
-		<div id="controls">
-			<button class='click' id="go_previous">Previous</button>
-			<button class='click' id="go_next">Next</button>
-			<button class='click' id="zoom_in">+</button>
-			<button class='click' id="zoom_out">-</button>
-			<input class='click' id="current_page" value="1" type="number" />
-		</div></div>
+		</div>
 	</div>
 </body>
 
 </html>
 <script>
-		var myState = {
-			pdf: null,
-			currentPage: 1,
-			zoom: 1
-		}
+	var myState = {
+		pdf: null,
+		currentPage: 1,
+		zoom: 1
+	}
 
-		pdfjsLib.getDocument('./test.pdf').then((pdf) => {
-			myState.pdf = pdf;
-			render();
-		});
+	pdfjsLib.getDocument('./test.pdf').then((pdf) => {
+		myState.pdf = pdf;
+		render();
+	});
 
-		function render() {
-			myState.pdf.getPage(myState.currentPage).then((page) => {
-				var canvas = document.getElementById("pdf_renderer");
-				var ctx = canvas.getContext('2d');
-				var viewport = page.getViewport(myState.zoom);
-				canvas.width = viewport.width;
-				canvas.height = viewport.height;
-				page.render({
-					canvasContext: ctx,
-					viewport: viewport
-				});
+	function render() {
+		myState.pdf.getPage(myState.currentPage).then((page) => {
+			var canvas = document.getElementById("pdf_renderer");
+			var ctx = canvas.getContext('2d');
+			var viewport = page.getViewport(myState.zoom);
+			canvas.width = viewport.width;
+			canvas.height = viewport.height;
+			page.render({
+				canvasContext: ctx,
+				viewport: viewport
 			});
-		}
+		});
+	}
 </script>
-	<script>
+<script>
 	document.getElementById('go_previous')
 		.addEventListener('click', (e) => {
 			if (myState.pdf == null ||
@@ -108,30 +115,35 @@
 			render();
 		});
 	document.getElementById('zoom_out')
-					.addEventListener('click', (e) => {
-							if(myState.pdf == null) return;
-							myState.zoom -= 0.5;
-							render();
-					});
+		.addEventListener('click', (e) => {
+			if (myState.pdf == null) return;
+			myState.zoom -= 0.5;
+			render();
+		});
 </script>
 <style>
-    #canvas_container {
-        width: 80vw;
-        height: 70vw;
-        overflow: auto;
-    }
-		#canvas_container {
-			background: #333;
-			text-align: center;
-			border: solid 3px;
+	#canvas_container {
+		width: 80vw;
+		height: 70vw;
+		overflow: auto;
 	}
+
+	#canvas_container {
+		background: #333;
+		text-align: center;
+		border: solid 3px;
+	}
+
 	input[type='number'] {
 		width: 50px;
 	}
-	input, button {
+
+	input,
+	button {
 		display: inline;
 		padding: 5px !important;
 	}
+
 	#controls {
 		height: fit-content;
 		overflow: hidden;
