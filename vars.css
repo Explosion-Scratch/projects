@@ -38,7 +38,7 @@
   background: #141414;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(var(--color), var(--secondary-color));
+  background: linear-gradient(var(--color), var(--secondary-color), var(--color));
   border-radius: 5000px;
   box-shadow: 0 0 5px 5px var(--color);
 }
