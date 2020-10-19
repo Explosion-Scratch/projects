@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
-@import url("styles/vars.css");
+@import url("vars.css");
 * {
   text-shadow: 0 0 5px var(--color-transparent);
   --font-size: 45%;
