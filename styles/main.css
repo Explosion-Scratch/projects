@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
-@import "vars.css";
+@import "styles/vars.css";
 .container {
   max-width: 500px;
   margin: 0 auto;
