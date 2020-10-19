@@ -1,196 +1,188 @@
 <!DOCTYPE html>
 
 <html lang="en">
+  <head>
+    <link rel="stylesheet" href="main.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PDF Viewer</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.0.943/pdf.min.js"></script>
+  </head>
 
-<head>
-	<link rel='stylesheet' href='main.css'>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>PDF Viewer</title>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.0.943/pdf.min.js">
-	</script>
-</head>
-
-<body>
-	<div class='container'>
-		<h1>PDF viewer
-		</h1>
-		<p>This is a PDF viewer that I made! Maybe in the future you'll be able to upload your own files!</p>
-		<div class='pdf-viewer'>
-			<div id="my_pdf_viewer">
-				<div id="canvas_container">
-					<canvas id="pdf_renderer"></canvas>
-				</div>
-			</div><br>
-			<div id="controls">
-				<button class='click' id="go_previous">Previous</button>
-				<button class='click' id="go_next">Next</button>
-				<button class='click' id="zoom_in">+</button>
-				<button class='click' id="zoom_out">-</button>
-				<input class='click' id="current_page" value="1" type="number" />
-			</div>
-		</div>
-	</div>
-</body>
-
+  <body>
+    <div class="container">
+      <h1>PDF viewer</h1>
+      <p>
+        This is a PDF viewer that I made! Maybe in the future you'll be able to
+        upload your own files!
+      </p>
+      <div class="pdf-viewer">
+        <div id="my_pdf_viewer">
+          <div id="canvas_container">
+            <canvas id="pdf_renderer"></canvas>
+          </div>
+        </div>
+        <br />
+        <div id="controls">
+          <button class="click" id="go_previous">Previous</button>
+          <button class="click" id="go_next">Next</button>
+          <button class="click" id="zoom_in">+</button>
+          <button class="click" id="zoom_out">-</button>
+          <input class="click" id="current_page" value="1" type="number" />
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
 <script>
-	var myState = {
-		pdf: null,
-		currentPage: 1,
-		zoom: 1
-	}
+  var myState = {
+    pdf: null,
+    currentPage: 1,
+    zoom: 1,
+  };
 
-	pdfjsLib.getDocument('./test.pdf').then((pdf) => {
-		myState.pdf = pdf;
-		render();
-	});
+  pdfjsLib.getDocument("./test.pdf").then((pdf) => {
+    myState.pdf = pdf;
+    render();
+  });
 
-	function render() {
-		myState.pdf.getPage(myState.currentPage).then((page) => {
-			var canvas = document.getElementById("pdf_renderer");
-			var ctx = canvas.getContext('2d');
-			var viewport = page.getViewport(myState.zoom);
-			canvas.width = viewport.width;
-			canvas.height = viewport.height;
-			page.render({
-				canvasContext: ctx,
-				viewport: viewport
-			});
-		});
-	}
+  function render() {
+    myState.pdf.getPage(myState.currentPage).then((page) => {
+      var canvas = document.getElementById("pdf_renderer");
+      var ctx = canvas.getContext("2d");
+      var viewport = page.getViewport(myState.zoom);
+      canvas.width = viewport.width;
+      canvas.height = viewport.height;
+      page.render({
+        canvasContext: ctx,
+        viewport: viewport,
+      });
+    });
+  }
 </script>
 <script>
-	document.getElementById('go_previous')
-		.addEventListener('click', (e) => {
-			if (myState.pdf == null ||
-				myState.currentPage == 1) return;
-			myState.currentPage -= 1;
-			document.getElementById("current_page")
-				.value = myState.currentPage;
-			render();
-		});
-	document.getElementById('go_next')
-		.addEventListener('click', (e) => {
-			if (myState.pdf == null ||
-				myState.currentPage > myState.pdf
-				._pdfInfo.numPages)
-				return;
+  document.getElementById("go_previous").addEventListener("click", (e) => {
+    if (myState.pdf == null || myState.currentPage == 1) return;
+    myState.currentPage -= 1;
+    document.getElementById("current_page").value = myState.currentPage;
+    render();
+  });
+  document.getElementById("go_next").addEventListener("click", (e) => {
+    if (
+      myState.pdf == null ||
+      myState.currentPage > myState.pdf._pdfInfo.numPages
+    )
+      return;
 
-			myState.currentPage += 1;
-			document.getElementById("current_page")
-				.value = myState.currentPage;
-			render();
-		});
-	document.getElementById('current_page')
-		.addEventListener('keypress', (e) => {
-			if (myState.pdf == null) return;
+    myState.currentPage += 1;
+    document.getElementById("current_page").value = myState.currentPage;
+    render();
+  });
+  document.getElementById("current_page").addEventListener("keypress", (e) => {
+    if (myState.pdf == null) return;
 
-			// Get key code
-			var code = (e.keyCode ? e.keyCode : e.which);
+    // Get key code
+    var code = e.keyCode ? e.keyCode : e.which;
 
-			// If key code matches that of the Enter key
-			if (code == 13) {
-				var desiredPage =
-					document.getElementById('current_page')
-					.valueAsNumber;
+    // If key code matches that of the Enter key
+    if (code == 13) {
+      var desiredPage = document.getElementById("current_page").valueAsNumber;
 
-				if (desiredPage >= 1 &&
-					desiredPage <= myState.pdf
-					._pdfInfo.numPages) {
-					myState.currentPage = desiredPage;
-					document.getElementById("current_page")
-						.value = desiredPage;
-					render();
-				}
-			}
-		});
-	document.getElementById('zoom_in')
-		.addEventListener('click', (e) => {
-			if (myState.pdf == null) return;
-			myState.zoom += 0.5;
-			render();
-		});
-	document.getElementById('zoom_out')
-		.addEventListener('click', (e) => {
-			if (myState.pdf == null) return;
-			myState.zoom -= 0.5;
-			render();
-		});
+      if (desiredPage >= 1 && desiredPage <= myState.pdf._pdfInfo.numPages) {
+        myState.currentPage = desiredPage;
+        document.getElementById("current_page").value = desiredPage;
+        render();
+      }
+    }
+  });
+  document.getElementById("zoom_in").addEventListener("click", (e) => {
+    if (myState.pdf == null) return;
+    myState.zoom += 0.5;
+    render();
+  });
+  document.getElementById("zoom_out").addEventListener("click", (e) => {
+    if (myState.pdf == null) return;
+    myState.zoom -= 0.5;
+    render();
+  });
 </script>
 <style>
-	#canvas_container {
-		width: 80%;
-		height: 70vw;
-		overflow: auto;
-	}
+  #canvas_container {
+    width: 80%;
+    height: 70vw;
+    overflow: auto;
+  }
 
-	#canvas_container {
-		background: #333;
-		text-align: center;
-		border: solid 3px;
-	}
+  #canvas_container {
+    background: #333;
+    text-align: center;
+    border: solid 3px;
+  }
 
-	input[type='number'] {
-		width: 50px;
-	}
+  input[type="number"] {
+    width: 50px;
+  }
 
-	input,
-	button {
-		display: inline;
-		padding: 5px !important;
-	}
+  input,
+  button {
+    display: inline;
+    padding: 5px !important;
+  }
 
-	#controls {
-		height: fit-content;
-		overflow: hidden;
-	}
+  #controls {
+    height: fit-content;
+    overflow: hidden;
+  }
 
-	.pdf-viewer {
-		margin: 0 auto;
-		display: block;
-	}
+  .pdf-viewer {
+    margin: 0 auto;
+    display: block;
+  }
 </style>
 <div class="se-pre-con"></div>
 <style>
-	.no-js #loader {
-		display: none;
-	}
+  .no-js #loader {
+    display: none;
+  }
 
-	.js #loader {
-		display: block;
-		position: absolute;
-		left: 100px;
-		top: 0;
-	}
+  .js #loader {
+    display: block;
+    position: absolute;
+    left: 100px;
+    top: 0;
+  }
 
-	.se-pre-con {
-		position: fixed;
-		left: 0px;
-		top: 0px;
-		width: 100%;
-		height: 100%;
-		z-index: 9999;
-		background: url('load.svg') center no-repeat black;
-	}
+  .se-pre-con {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url("load.svg") center no-repeat black;
+  }
 </style>
 
 <head>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
-	<script>
-		//paste this code under the head tag or in a separate js file.
-		// Wait for window load
-		$(window).load(function() {
-			// Animate loader off screen
-			$(".se-pre-con").fadeOut("slow");;
-		});
-	</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+  <script>
+    //paste this code under the head tag or in a separate js file.
+    // Wait for window load
+    $(window).load(function () {
+      // Animate loader off screen
+      $(".se-pre-con").fadeOut("slow");
+    });
+  </script>
 </head>
 
 <head>
-	<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <script>
-	$('h1, h2, h3').css('text-align', 'center').append('<hr style="height: 1px; background: linear-gradient(to right, transparent , var(--color), transparent); padding: 0px; border: none;">');
+  $("h1, h2, h3")
+    .css("text-align", "center")
+    .append(
+      '<hr style="height: 1px; background: linear-gradient(to right, transparent , var(--color), transparent); padding: 0px; border: none;">'
+    );
 </script>
