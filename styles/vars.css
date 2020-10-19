@@ -1,4 +1,4 @@
-* {
+:root {
   --color: #66ffff;
   --color-transparent: rgba(102, 255, 255, 0.603);
   --font-size: 45%;
@@ -38,7 +38,11 @@
   background: #141414;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(var(--color), var(--secondary-color), var(--color));
+  background: linear-gradient(
+    var(--color),
+    var(--secondary-color),
+    var(--color)
+  );
   border-radius: 5000px;
   box-shadow: 0 0 5px 5px var(--color);
 }
