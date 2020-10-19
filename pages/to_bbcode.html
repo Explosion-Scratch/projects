@@ -27,14 +27,14 @@
   </div>
 </div>
 <script>
-  function escapeHtml(unsafe) {
+	function escapeHtml(unsafe) {
     return unsafe
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
-      .replace(/'/g, "&#039;");
-  }
+         .replace(/&/g, "&amp;")
+         .replace(/</g, "&lt;")
+         .replace(/>/g, "&gt;")
+         .replace(/"/g, "&quot;")
+         .replace(/'/g, "&#039;");
+ 	}
   function go() {
     var c1 = escapeHtml(document.getElementById("input").value);
     var d1 = document.getElementById("output");
