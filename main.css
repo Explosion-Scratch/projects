@@ -166,7 +166,8 @@ h1 {
   box-shadow: none;
 }
 
-#button, .click {
+#button,
+.click {
   margin: 10px 5px;
   color: var(--color);
   background-color: transparent;
@@ -179,7 +180,9 @@ h1 {
   transition: all 0.2s ease-in-out;
 }
 
-#button:hover, .click:hover:not(input), input[type="number"]:focus {
+#button:hover,
+.click:hover:not(input),
+input[type="number"]:focus {
   box-shadow: 1px 1px var(--color-transparent), 2px 2px var(--color-transparent),
     3px 3px var(--color-transparent);
   transform: translateX(-3px);
@@ -210,7 +213,8 @@ hr {
   padding: 0px;
   border: none;
 }
-.beta *, .beta{
-	color: var(--color-transparent);
-	cursor: not-allowed;
+.beta *,
+.beta {
+  color: var(--color-transparent);
+  cursor: not-allowed;
 }

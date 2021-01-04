@@ -26,5 +26,3 @@ Hi there! This is the part of [my website](https://explosion-scratch.github.io) 
   A Test for some nice input styles.
 - [BBCode parser!](https://explosion-scratch.github.io/to_bbcode.html)
   This was hard to make.
-
-
